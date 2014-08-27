@@ -1,0 +1,39 @@
+[user]
+	name = William Falk-Wallace
+	email = wgf2104@columbia.edu
+[core]
+	excludesfile = /Users/wfalkwallace/.gitignore_global
+[alias]
+	a = add
+	s = status
+	c = commit
+	cl = clone
+	f = fetch
+	cm = commit -m
+	br = branch
+	co = checkout
+	df = diff
+	lg = log -p
+	p = push
+	pu = pull
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	r = reset
+	r1 = reset HEAD^
+	r2 = reset HEAD^^
+	rh = reset --hard
+	rh1 = reset HEAD^ --hard
+	rh2 = reset HEAD^^ --hard
+	sl = stash list
+	sp = stash pop
+	ss = stash
+[credential]
+	helper = osxkeychain
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	default = current
