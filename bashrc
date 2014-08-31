@@ -69,6 +69,9 @@ fi
 export PATH=$PATH:~/Documents/code/scripts:~/Documents/code/scripts/3P
 ### add pass: http://www.zx2c4.com/projects/password-store
 # source /usr/local/etc/bash_completion.d/password-store
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
 
 ##############################RUBY JUNK######################################
@@ -82,15 +85,13 @@ PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.0/bin # Add Gems to PATH
 export PATH=/usr/local/bin:$PATH
 
 
-#############################################################################
-### Added by the Heroku Toolbelt
-# export PATH="/usr/local/heroku/bin:$PATH"
-
-
 ###############################OPT JUNK######################################
 export PATH=/Users/wfalkwallace/Documents/code/optimizely/out:$PATH
 export PATH=/Users/wfalkwallace/Documents/code/optimizely/out/ec2_api_tools/bin:$PATH
 export EC2_HOME=/Users/wfalkwallace/Documents/code/optimizely/out/ec2_api_tools
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
-### move user
+### move user up for specific ruby.
 export PATH=/usr/bin:$PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
