@@ -16,6 +16,9 @@
 	lg = log -p
 	p = push
 	pu = pull
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	vis = !gitk
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	r = reset
