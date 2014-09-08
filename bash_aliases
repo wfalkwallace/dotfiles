@@ -77,11 +77,6 @@ alias todo="awk '/TODO/ {print NR "'"\t" ($1=$2="")'" $0}' $*"
 # dashdocs
 alias dash='open dash://$*'
 
-# virtualenv and flask stuff
-alias venv='virtualenv --distribute venv'
-alias vact='source venv/bin/activate'
-alias vdeact='source venv/bin/deactivate'
-
 # Betty
 alias betty='~/Documents/code/scripts/3P/betty/main.rb'
 alias mybetty='~/Documents/code/betty/main.rb'
