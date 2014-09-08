@@ -54,11 +54,6 @@ if [ -f "${HOME}/.bash_functions" ]; then
 	source "${HOME}/.bash_functions"
 fi
 
-#Source git autocompletion
-if [ -f "${HOME}/.git-completion.bash" ]; then
-	source "${HOME}/.git-completion.bash"
-fi
-
 #guard against "fork-bomb" (cs3157)
 # ulimit -u 256
 
@@ -71,7 +66,10 @@ export PATH=$PATH:~/Documents/code/scripts:~/Documents/code/scripts/3P
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
-
+#Source git autocompletion
+if [ -f "${HOME}/.git-completion.bash" ]; then
+  source "${HOME}/.git-completion.bash"
+fi
 
 ##############################RUBY JUNK######################################
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
