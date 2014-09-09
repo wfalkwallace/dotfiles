@@ -97,3 +97,6 @@ alias bcs='brew cask search'
 
 # Optimizely stuff
 alias mb="JS_BUILD_ARGS='--bundle bundle' make js"
+
+# gitjk: https://github.com/mapmeld/gitjk#gitjk
+alias gitjk="history 10 | tac | gitjk_cmd"
