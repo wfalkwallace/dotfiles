@@ -90,9 +90,4 @@ export PATH=/usr/local/bin:$PATH
 
 
 ###############################OPT JUNK######################################
-export PATH=/Users/wfalkwallace/Documents/code/optimizely/out:$PATH
-export PATH=/Users/wfalkwallace/Documents/code/optimizely/out/ec2_api_tools/bin:$PATH
-export EC2_HOME=/Users/wfalkwallace/Documents/code/optimizely/out/ec2_api_tools
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
-### move user up for specific ruby.
-# export PATH=/usr/bin:$PATH
+source /Users/wfalkwallace/Documents/code/optimizely/.source_this.sh
