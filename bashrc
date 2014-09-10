@@ -91,3 +91,7 @@ export PATH=/usr/local/bin:$PATH
 
 ###############################OPT JUNK######################################
 source /Users/wfalkwallace/Documents/code/optimizely/.source_this.sh
+
+
+##############################JRNL JUNK######################################
+HISTINGNORE="jrnl *"
