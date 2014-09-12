@@ -77,11 +77,6 @@ alias todo="awk '/TODO/ {print NR "'"\t" ($1=$2="")'" $0}' $*"
 # dashdocs
 alias dash='open dash://$*'
 
-# virtualenv and flask stuff
-alias venv='virtualenv env'
-alias va='source env/bin/activate'
-alias vd='deactivate'
-
 # Betty
 alias betty='~/Documents/code/scripts/3P/betty/main.rb'
 alias mybetty='~/Documents/code/betty/main.rb'
@@ -99,3 +94,9 @@ alias dashon='defaults write com.apple.dashboard mcx-disabled -boolean NO; killa
 
 # Brew stuff
 alias bcs='brew cask search'
+
+# Optimizely stuff
+alias mb="JS_BUILD_ARGS='--bundle bundle' make js"
+
+# gitjk: https://github.com/mapmeld/gitjk#gitjk
+alias gitjk="history 10 | tac | gitjk_cmd"
