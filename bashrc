@@ -54,14 +54,8 @@ if [ -f "${HOME}/.bash_functions" ]; then
 	source "${HOME}/.bash_functions"
 fi
 
-#Source git autocompletion
-if [ -f "${HOME}/.git-completion.bash" ]; then
-	source "${HOME}/.git-completion.bash"
-fi
-
 #guard against "fork-bomb" (cs3157)
 # ulimit -u 256
-
 
 
 ##############################  ALSO:  ######################################
@@ -72,7 +66,12 @@ export PATH=$PATH:~/Documents/code/scripts:~/Documents/code/scripts/3P
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
-
+#Source git autocompletion
+#see http://stackoverflow.com/questions/342969/how-do-i-get-bash-completion-to-work-with-aliases/1793178
+if [ -f "${HOME}/.git-completion.bash" ]; then
+  source "${HOME}/.git-completion.bash"
+  $(__git_complete g __git_main)
+fi
 
 ##############################RUBY JUNK######################################
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -80,24 +79,18 @@ PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.0/bin # Add Gems to PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
+#################################HEROKU JUNK#################################
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+
 ##############################BREW JUNK######################################
 export PATH=/usr/local/bin:$PATH
 
 
 ###############################OPT JUNK######################################
-export PATH=/Users/wfalkwallace/Documents/code/optimizely/out:$PATH
-export PATH=/Users/wfalkwallace/Documents/code/optimizely/out/ec2_api_tools/bin:$PATH
-export EC2_HOME=/Users/wfalkwallace/Documents/code/optimizely/out/ec2_api_tools
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
-### move user up for specific ruby.
-export PATH=/usr/bin:$PATH
+source /Users/wfalkwallace/Documents/code/optimizely/.source_this.sh
 
 
-#############################HEROKU JUNK#####################################
-export PATH="/usr/local/heroku/bin:$PATH"
-
-
-##############################VENV JUNK######################################
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Documents/code
-source /usr/local/bin/virtualenvwrapper.sh
+##############################JRNL JUNK######################################
+HISTINGNORE="jrnl *"
