@@ -29,7 +29,7 @@ PATH=$HOME/bin:$PATH
 
 #Set up prompt
 export PS1='[\A]\[\e[36m\]\u\[\e[0m\]@\h:[\W]'
-export PROMPT_COMMAND="prompt_colorize"
+export PROMPT_COMMAND="set_prompt"
 
 # history #, basename of pwd
 #export PS1=":\[$WHITE\]\n\![\W]"
@@ -77,7 +77,6 @@ fi
 ##############################RUBY JUNK######################################
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.0/bin # Add Gems to PATH
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
@@ -93,5 +92,12 @@ export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
 ### move user up for specific ruby.
 export PATH=/usr/bin:$PATH
 
-### Added by the Heroku Toolbelt
+
+#############################HEROKU JUNK#####################################
 export PATH="/usr/local/heroku/bin:$PATH"
+
+
+##############################VENV JUNK######################################
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Documents/code
+source /usr/local/bin/virtualenvwrapper.sh
