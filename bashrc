@@ -70,7 +70,7 @@ fi
 #see http://stackoverflow.com/questions/342969/how-do-i-get-bash-completion-to-work-with-aliases/1793178
 if [ -f "${HOME}/.git-completion.bash" ]; then
   source "${HOME}/.git-completion.bash"
-  $(__git_complete g __git_main)
+  __git_complete g __git_main
 fi
 
 ##############################RUBY JUNK######################################
@@ -89,7 +89,9 @@ export PATH=/usr/local/bin:$PATH
 
 
 ###############################OPT JUNK######################################
-source /Users/wfalkwallace/Documents/code/optimizely/.source_this.sh
+if [ -f "${OPTIMIZELY_HOME}/.source_this.sh" ]; then
+  source "${OPTIMIZELY_HOME}/.source_this.sh"
+fi
 
 
 ##############################JRNL JUNK######################################
