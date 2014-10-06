@@ -16,6 +16,11 @@
 	lg = log -p
 	p = push
 	pu = pull
+	url = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f"
+	commits = !hub browse -- commits
+	issues = !hub browse -- issues
+	wiki = !hub browse -- wiki
+	settings = !hub browse -- settings
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	vis = !gitk
