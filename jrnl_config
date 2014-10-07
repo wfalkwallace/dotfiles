@@ -1,17 +1,21 @@
 {
-  "editor": "subl -w",
-  "encrypt": true,
   "default_hour": 9,
-  "default_minute": 00,
-  "timeformat": "%a, %d %b  %I:%M%p",
+  "linewrap": 79,
+  "encrypt": true,
+  "default_minute": 0,
+  "tagsymbols": "@",
+  "editor": "subl -w",
+  "timeformat": "%Y-%m-%d %I-%M-%S%p (%A): ",
   "highlight": true,
-  "linewrap": true,
   "journals": {
-    "default": "~/Documents/jrnl/journal.txt",
-    "work": {
-      "journal": "~/Documents/jrnl/work.txt",
-      "encrypt": false,
+    "default": {
+      "journal": "~/jrnl/journal.txt",
+      "encrypt": false
     },
-    "personal": "~/Documents/jrnl/personal.txt",
-  },
+    "me": "~/jrnl/personal.txt",
+    "work": {
+      "journal": "~/jrnl/work.txt",
+      "encrypt": false
+    }
+  }
 }
