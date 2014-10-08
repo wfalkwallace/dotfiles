@@ -73,30 +73,32 @@ if [ -f "${HOME}/.git-completion.bash" ]; then
   __git_complete g __git_main
 fi
 
-##############################RUBY JUNK######################################
+###############################RUBY JUNK#######################################
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.0/bin # Add Gems to PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
-#################################HEROKU JUNK#################################
+##################################HEROKU JUNK##################################
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
 
-##############################BREW JUNK######################################
+###############################BREW JUNK#######################################
 export PATH=/usr/local/bin:$PATH
 
 
-###############################OPT JUNK######################################
+################################OPT JUNK#######################################
 if [ -f "${OPTIMIZELY_HOME}/.source_this.sh" ]; then
   source "${OPTIMIZELY_HOME}/.source_this.sh"
 fi
 
 
-##############################JRNL JUNK######################################
-HISTINGNORE="jrnl *"
+###############################JRNL JUNK#######################################
+export HISTIGNORE="jrnl *"
 
+
+###############################VENV JUNK#######################################
 if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
   source /usr/local/bin/virtualenvwrapper.sh
   export WORKON_HOME=$HOME/.virtualenvs
