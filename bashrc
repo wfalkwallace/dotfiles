@@ -89,8 +89,14 @@ export PATH=/usr/local/bin:$PATH
 
 
 ################################OPT JUNK#######################################
-if [ -f "${OPTIMIZELY_HOME}/.source_this.sh" ]; then
-  source "${OPTIMIZELY_HOME}/.source_this.sh"
+export OPTIMIZELY_HOME="~/Documents/code/optimizely/optimizely"
+if [ -f "$OPTIMIZELY_HOME/.source_this.sh" ]; then
+  source "$OPTIMIZELY_HOME/.source_this.sh"
+
+  # Add arcanist to PATH environment variable
+  export PATH=$PATH:$HOME/tools/arcanist/bin
+  # Add tab completion at the command-line
+  source ~/tools/arcanist/resources/shell/bash-completion
 fi
 
 
