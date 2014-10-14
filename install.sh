@@ -7,7 +7,7 @@
 
 ### Variables
 # dotfiles directory
-dir=$(pwd)
+dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # old dotfiles backup directory
 backup=~/dotfiles_old
 # list of files/folders to symlink in homedir
