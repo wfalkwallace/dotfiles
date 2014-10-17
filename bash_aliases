@@ -13,7 +13,6 @@ alias cd..='cd ..'
 alias home='cd ~'
 alias desk='cd ~/Desktop'
 alias code='cd ~/Documents/code'
-alias opt='cd ~/Documents/code/optimizely'
 alias ling='cd ~/Documents/code/linger'
 alias lw='cd ~/Documents/code/linger/web_app'
 alias eclipse='cd ~/Documents/eclipse/workspace'
@@ -28,6 +27,7 @@ alias cpu='top -o cpu'
 alias mem='top -o rsize'
 alias cal12='cal 12 2013'
 alias uphour='caffeinate -t 3600'
+alias t='todo.sh -d ~/.todo.cfg'
 
 # current IP
 alias ip='curl icanhazip.com'
@@ -97,6 +97,7 @@ alias bcs='brew cask search'
 
 # Optimizely stuff
 alias mb="JS_BUILD_ARGS='--bundle bundle' make js"
+alias opt='cd ~/Documents/code/optimizely/optimizely'
 
 # gitjk: https://github.com/mapmeld/gitjk#gitjk
 alias gitjk="history 10 | tac | gitjk_cmd"
