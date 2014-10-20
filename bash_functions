@@ -20,6 +20,27 @@ function up()
 	cd $DIR
 }
 
+repo()
+{
+  echo "Creating new repo '$1' via Github API..."
+  curl -u 'wfalkwallace' https://api.github.com/user/repos -d '{"name":"$1"}'
+
+  echo "Creating directory '$1'..."
+  mkdir $1
+
+  echo "Entering directory '$1'..."
+  cd $1
+
+  echo "Creating README..."
+  touch README.md
+
+  echo "Initializing git repo in directory '$1'..."
+  git init
+
+  echo "Adding remote 'https://github.com/wfalkwallace/$1.git'..."
+  git remote add origin https://github.com/wfalkwallace/$1.git
+}
+
 
 ################################################################################
 ################################ Prompt Helpers ################################
