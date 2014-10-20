@@ -65,6 +65,7 @@ export PATH=$PATH:~/Documents/code/scripts:~/Documents/code/scripts/3P
 # source /usr/local/etc/bash_completion.d/password-store
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
+  complete -F _todo t
 fi
 #Source git autocompletion
 #see http://stackoverflow.com/questions/342969/how-do-i-get-bash-completion-to-work-with-aliases/1793178
@@ -109,3 +110,7 @@ if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
   source /usr/local/bin/virtualenvwrapper.sh
   export WORKON_HOME=$HOME/.virtualenvs
 fi
+
+
+###############################TODO JUNK#######################################
+export TODOTXT_DEFAULT_ACTION=ls
