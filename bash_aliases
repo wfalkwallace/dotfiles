@@ -51,13 +51,13 @@ alias ffx='open -a firefox'
 # git shortcuts
 alias g='git'
 alias h='hub'
-alias st='g s'
-alias comm='g c -m $*'
-alias push='g p'
-alias pull='g pu'
+alias st='git status'
+alias comm='git commit -m $*'
+alias push='git push'
+alias pull='git pull'
 
 # rails shortcuts
-alias r='rails $*'
+alias r='rails'
 
 # st3 shortcut
 alias stt='subl .'
