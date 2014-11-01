@@ -11,6 +11,8 @@ export VISUAL EDITOR CDPATH PS1 PS2 PATH TERM ENV
 # know which one to run when they want you to type something.
 EDITOR=vim
 
+export TERM=xterm-256color
+
 # Put your favorite editor here, the default is vim
 VISUAL=vim
 
@@ -90,7 +92,7 @@ export PATH=/usr/local/bin:$PATH
 
 
 ################################OPT JUNK#######################################
-export OPTIMIZELY_HOME="~/Documents/code/optimizely/optimizely"
+export OPTIMIZELY_HOME="$HOME/Documents/code/optimizely/optimizely"
 if [ -f "$OPTIMIZELY_HOME/.source_this.sh" ]; then
   source "$OPTIMIZELY_HOME/.source_this.sh"
 
