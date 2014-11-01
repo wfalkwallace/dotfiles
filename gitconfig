@@ -5,11 +5,12 @@
 	excludesfile = /Users/wfalkwallace/.gitignore_global
 [alias]
 	a = add
-	s = status
+	st = status
 	c = commit
 	cl = clone
 	f = fetch
 	cm = commit -m
+	rem = remote
 	br = branch
 	co = checkout
 	df = diff
@@ -17,6 +18,7 @@
 	p = push
 	pu = pull
 	url = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f"
+	pb = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f | pbcopy"
 	commits = !hub browse -- commits
 	issues = !hub browse -- issues
 	wiki = !hub browse -- wiki
@@ -34,7 +36,7 @@
 	rh2 = reset HEAD^^ --hard
 	sl = stash list
 	sp = stash pop
-	ss = stash
+	s = stash
 [credential]
 	helper = osxkeychain
 [difftool "sourcetree"]
