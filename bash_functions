@@ -147,7 +147,13 @@ function git_prompt
 ################################## The Prompt ##################################
 ################################################################################
 
+### Homebrewed
 function set_prompt
 {
   PS1="$(time_prompt)$(user_prompt)@$(host_prompt):$(dir_prompt)$(git_prompt)$(end_prompt) "
+}
+
+### Powerline-shell
+function _update_ps1() {
+   export PS1="$(~/powerline-shell.py --mode flat --cwd-max-depth 3 $? 2> /dev/null)"
 }

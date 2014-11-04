@@ -100,6 +100,9 @@ if [ -f "$OPTIMIZELY_HOME/.source_this.sh" ]; then
   export PATH=$PATH:$HOME/tools/arcanist/bin
   # Add tab completion at the command-line
   source ~/tools/arcanist/resources/shell/bash-completion
+
+  # Add powerline-shell
+  export PROMPT_COMMAND="_update_ps1;"
 fi
 
 
