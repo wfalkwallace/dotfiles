@@ -5,7 +5,7 @@
 	excludesfile = /Users/wfalkwallace/.gitignore_global
 [alias]
 	a = add
-	st = status
+	s = status
 	c = commit
 	cl = clone
 	f = fetch
@@ -36,8 +36,10 @@
 	rh2 = reset HEAD^^ --hard
 	sl = stash list
 	sp = stash pop
-	s = stash
+	st = stash
 [credential]
 	helper = osxkeychain
 [push]
 	default = current
+[pull]
+	rebase = true
