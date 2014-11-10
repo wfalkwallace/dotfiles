@@ -101,3 +101,5 @@ alias opt='cd ~/Documents/code/optimizely/optimizely'
 
 # gitjk: https://github.com/mapmeld/gitjk#gitjk
 alias gitjk="history 10 | tac | gitjk_cmd"
+
+alias startredis='redis-server /usr/local/etc/redis.conf'
