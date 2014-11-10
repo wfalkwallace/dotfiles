@@ -93,8 +93,7 @@ export PATH=/usr/local/bin:$PATH
 
 ################################OPT JUNK#######################################
 export OPTIMIZELY_HOME="$HOME/Documents/code/optimizely/optimizely"
-if [ -f "$OPTIMIZELY_HOME/.source_this.sh" ]; then
-  source "$OPTIMIZELY_HOME/.source_this.sh"
+if [ -d "$OPTIMIZELY_HOME" ]; then
 
   # Add arcanist to PATH environment variable
   export PATH=$PATH:$HOME/tools/arcanist/bin

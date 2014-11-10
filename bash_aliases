@@ -60,7 +60,7 @@ alias pull='git pull'
 alias r='rails'
 
 # st3 shortcut
-alias stt='subl && sleep 0.2 && subl .'
+alias stt='subl .'
 
 # start a python server in the current directory
 alias serv='python -m SimpleHTTPServer 8000'
