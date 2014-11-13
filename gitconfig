@@ -47,32 +47,32 @@
   rmg = "!sh -c 'git ls-files | grep $1 | xargs -r git rm' -" # 'remove grep' remove any files that match $1
   rsg = "!sh -c 'git ls-files -c --with-tree=HEAD | grep $1 | xargs -r git reset HEAD -- ' -" # 'reset grep' reset any files that match $1
 [color]
-    branch = auto
-    current = yellow reverse
-    diff = auto
-    grep = auto
-    interactive = auto
-    local = yellow
-    remote = green
-    status = auto
-    ui = auto
+  branch = auto
+  current = yellow reverse
+  diff = auto
+  grep = auto
+  interactive = auto
+  local = yellow
+  remote = green
+  status = auto
+  ui = auto
 [color "diff"]
-    frag = cyan
-    new = green bold
-    old = red bold
-    whitespace = red reverse
+  frag = cyan
+  new = green bold
+  old = red bold
+  whitespace = red reverse
 [color "status"]
-    added = green
-    changed = yellow
-    untracked = red
+  added = green
+  changed = yellow
+  untracked = red
 [credential]
 	helper = osxkeychain
 [merge]
-    conflictstyle = diff3
-    stat = true
+  conflictstyle = diff3
+  stat = true
 [push]
-	default = current
+  default = current
 [pull]
-	rebase = true
+  rebase = true
 [status]
-    submodulesummary = true
+  submodulesummary = true
