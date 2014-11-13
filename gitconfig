@@ -5,60 +5,74 @@
 	excludesfile = ~/.gitignore_global
 [alias]
 	a = add
-	s = status
+	br = branch
 	c = commit
 	cl = clone
-	f = fetch
 	cm = commit -m
-	rem = remote
-	br = branch
 	co = checkout
-	df = diff
-	lg = log -p
-	p = push
-	pu = pull
-	url = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f"
-	pb = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f | pbcopy"
 	commits = !hub browse -- commits
+	f = fetch
 	issues = !hub browse -- issues
-	wiki = !hub browse -- wiki
-	settings = !hub browse -- settings
-	unstage = reset HEAD --
 	last = log -1 HEAD
-	vis = !gitk
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	lg = log -p
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	p = push
+	pb = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f | pbcopy"
+	pu = pull
 	r = reset
 	r1 = reset HEAD^
 	r2 = reset HEAD^^
+	rem = remote
 	rh = reset --hard
 	rh1 = reset HEAD^ --hard
 	rh2 = reset HEAD^^ --hard
+	s = status
+	settings = !hub browse -- settings
 	sl = stash list
 	sp = stash pop
 	st = stash
-[credential]
-	helper = osxkeychain
-[push]
-	default = current
-[pull]
-	rebase = true
+	unstage = reset HEAD --
+	url = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f"
+	vis = !gitk
+	wiki = !hub browse -- wiki
+  ag = "!sh -c 'git ls-files -m -o --exclude-standard | grep $1 | xargs -r git add' -" # 'add grep' stages all new+changed that match $1
+  cg = "!sh -c 'git ls-files -m | grep $1 | xargs -r git checkout' -" # 'checkout grep' checkouts any files that match $1
+  cherry = cherry-pick
+  comit = commit
+  dc = diff --cached --ignore-space-change
+  df = diff --ignore-space-change
+  dg = "!sh -c 'git ls-files -m | grep $1 | xargs -r git diff' -" # 'diff grep' diffs any files that match $1
+  pg = "!sh -c 'git ls-files -m | grep $1 | xargs -r git diff --cached' -" # 'patch grep' diff --cached any files that match $1
+  rmg = "!sh -c 'git ls-files | grep $1 | xargs -r git rm' -" # 'remove grep' remove any files that match $1
+  rsg = "!sh -c 'git ls-files -c --with-tree=HEAD | grep $1 | xargs -r git reset HEAD -- ' -" # 'reset grep' reset any files that match $1
 [color]
-    diff = auto
-    status = auto
     branch = auto
+    current = yellow reverse
+    diff = auto
     grep = auto
     interactive = auto
-    ui = auto
-    current = yellow reverse
     local = yellow
     remote = green
+    status = auto
+    ui = auto
 [color "diff"]
-    whitespace = red reverse
     frag = cyan
-    old = red bold
     new = green bold
+    old = red bold
+    whitespace = red reverse
 [color "status"]
     added = green
     changed = yellow
     untracked = red
+[credential]
+	helper = osxkeychain
+[merge]
+    conflictstyle = diff3
+    stat = true
+[push]
+	default = current
+[pull]
+	rebase = true
+[status]
+    submodulesummary = true
