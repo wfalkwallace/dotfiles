@@ -22,7 +22,7 @@ CDPATH=:$HOME
 ENV=$HOME/.profile
 
 # History file
-HISTFILE=$HOME/.hist
+HISTFILE=$HOME/.bash_history
 : ${HISTSIZE:=500}
 export HISTSIZE
 
