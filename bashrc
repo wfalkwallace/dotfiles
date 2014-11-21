@@ -106,7 +106,8 @@ fi
 
 
 ###############################JRNL JUNK#######################################
-export HISTIGNORE="jrnl *"
+export HISTIGNORE="jrnl*:$HISTIGNORE"
+export HISTIGNORE="*.private:$HISTIGNORE"
 
 
 ###############################VENV JUNK#######################################
