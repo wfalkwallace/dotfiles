@@ -18,6 +18,8 @@ alias c='clear'
 alias cd..='cd ..'
 alias home='cd ~'
 alias desk='cd ~/Desktop'
+alias ducks='du -cksh *'
+alias histprof="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
 ################################################################################
 ### STATS
 alias now='date +"%m/%d/%y %T"'
