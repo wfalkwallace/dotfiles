@@ -119,3 +119,8 @@ fi
 
 ###############################TODO JUNK#######################################
 export TODOTXT_DEFAULT_ACTION=ls
+
+############################CAPPUCCINO JUNK####################################
+export NARWHAL_ENGINE=jsc
+export PATH="/usr/local/narwhal/bin:$PATH"
+export CAPP_BUILD="/Users/wfalkwallace/Build"
