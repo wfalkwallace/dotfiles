@@ -97,6 +97,8 @@ if [ -d "$OPTIMIZELY_HOME" ]; then
 
   # Add arcanist to PATH environment variable
   export PATH=$PATH:$HOME/tools/arcanist/bin
+  # Move opt up for ruby/python/...
+  export PATH=$OPTIMIZELY_HOME/out:$PATH
   # Add tab completion at the command-line
   source ~/tools/arcanist/resources/shell/bash-completion
 
