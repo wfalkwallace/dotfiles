@@ -14,9 +14,9 @@
 	f = fetch
 	issues = !hub browse -- issues
 	last = log -1 HEAD
-	l = log --pretty=oneline -3
+	ls = log --pretty=oneline -3
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	l = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	p = push
 	pb = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f | pbcopy"
 	pu = pull
