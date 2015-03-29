@@ -6,7 +6,6 @@
 # Template taken from Columbia University CRF Default bash profile
 
 export VISUAL EDITOR CDPATH PS1 PS2 PATH TERM ENV
-
 # Set your editor so that various programs (including git) will
 # know which one to run when they want you to type something.
 EDITOR=vim
@@ -59,7 +58,6 @@ fi
 #guard against "fork-bomb" (cs3157)
 # ulimit -u 256
 
-
 ##############################  ALSO:  ######################################
 ### add scripts to path
 export PATH=$PATH:~/Documents/code/scripts:~/Documents/code/scripts/3P
@@ -107,11 +105,6 @@ if [ -d "$OPTIMIZELY_HOME" ]; then
 fi
 
 
-###############################JRNL JUNK#######################################
-export HISTIGNORE="jrnl*:$HISTIGNORE"
-export HISTIGNORE="*.private:$HISTIGNORE"
-
-
 ###############################VENV JUNK#######################################
 if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
   source /usr/local/bin/virtualenvwrapper.sh
@@ -121,6 +114,7 @@ fi
 
 ###############################TODO JUNK#######################################
 export TODOTXT_DEFAULT_ACTION=ls
+
 
 ############################CAPPUCCINO JUNK####################################
 export NARWHAL_ENGINE=jsc
