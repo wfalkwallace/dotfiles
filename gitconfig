@@ -17,6 +17,7 @@
 	ls = log --pretty=oneline -3
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	l = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  lp = log --graph --decorate --pretty=oneline --abbrev-commit
 	p = push
 	pb = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f | pbcopy"
 	pu = pull
@@ -78,3 +79,7 @@
   submodulesummary = true
 [help]
 	autocorrect = 1
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
