@@ -94,7 +94,8 @@ alias bcs='brew cask search'
 alias gitjk="history 10 | tac | gitjk_cmd"
 
 # Node stuff
-alias bode='babel-node --experimental'
+alias bode='babel-node'
+#alias bode='babel-node --experimental'
 ################################################################################
 ### OSX TRICKS
 # copy-paste in preview
