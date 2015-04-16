@@ -93,6 +93,8 @@ alias bcs='brew cask search'
 # gitjk: https://github.com/mapmeld/gitjk#gitjk
 alias gitjk="history 10 | tac | gitjk_cmd"
 
+# Node stuff
+alias bode='babel-node --experimental'
 ################################################################################
 ### OSX TRICKS
 # copy-paste in preview
