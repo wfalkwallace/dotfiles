@@ -67,17 +67,21 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
   complete -F _todo t
 fi
-#Source git autocompletion
-#see http://stackoverflow.com/questions/342969/how-do-i-get-bash-completion-to-work-with-aliases/1793178
+# Source git autocompletion
+# see http://stackoverflow.com/questions/342969/ -->
+# how-do-i-get-bash-completion-to-work-with-aliases/1793178
 if [ -f "${HOME}/.git-completion.bash" ]; then
   source "${HOME}/.git-completion.bash"
   __git_complete g __git_main
 fi
 
 ###############################RUBY JUNK#######################################
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.0/bin # Add Gems to PATH
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
+# Add Gems to PATH
+PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.0/bin
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 
 ##################################HEROKU JUNK##################################
@@ -114,6 +118,11 @@ fi
 
 ###############################TODO JUNK#######################################
 export TODOTXT_DEFAULT_ACTION=ls
+
+
+################################NVM JUNK#######################################
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 
 ############################CAPPUCCINO JUNK####################################
