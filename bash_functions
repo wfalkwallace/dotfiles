@@ -90,6 +90,7 @@ function repo()
   git remote add origin https://github.com/wfalkwallace/$1.git
 }
 
+# from http://ifandelse.com/listing-git-branches-in-order-of-most-recent-commit/
 function branches()
 {
   git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)|%(committerdate:iso)|%(authorname)' |
