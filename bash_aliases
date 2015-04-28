@@ -72,8 +72,11 @@ alias g='git'
 alias h='hub'
 alias st='git status'
 alias comm='git commit -m $*'
+alias cm='comm'
 alias push='git push'
 alias pull='git pull'
+alias branches='branches'
+alias brs='branches'
 ################################################################################
 ###TOOLS
 alias r='rails'

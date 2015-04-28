@@ -39,15 +39,18 @@ function bwana()
 ################################################################################
 # From http://thelucid.com/2012/01/04/naming-your-terminal-tabs-in-osx-lion/
 
-function name_tab() {
+function name_tab()
+{
   printf "\e]1;$1\a"
 }
 
-function name_window() {
+function name_window()
+{
   printf "\e]2;$1\a"
 }
 
-function name() {
+function name()
+{
   if [ $# -ne 2 ]; then
     echo "Usage: name <tab|t|window|win|w> <name>"
   fi
@@ -63,10 +66,10 @@ function name() {
 
 
 ################################################################################
-################################# Github Hacks #################################
+############################## Git + Github Hacks ##############################
 ################################################################################
 
-repo()
+function repo()
 {
   echo "Creating new repo '$1' via Github API..."
   curl -u 'wfalkwallace' https://api.github.com/user/repos -d '{"name":"$1"}'
@@ -87,25 +90,36 @@ repo()
   git remote add origin https://github.com/wfalkwallace/$1.git
 }
 
+function branches()
+{
+  git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)|%(committerdate:iso)|%(authorname)' |
+    sed 's/refs\/heads\///g' |
+    grep -v BACKUP  |
+    while IFS='|' read branch date author
+    do
+        printf '%-15s %-30s %s\n' "$branch" "$date" "$author"
+    done
+}
+
 
 ################################################################################
 ################################ Prompt Helpers ################################
 ################################################################################
 
-function colorize
+function colorize()
 {
   local color="$(($RANDOM % 2));$(($RANDOM % 7 + 30))m"
   echo "\[\033[$color\]"
 }
 
-function uncolor
+function uncolor()
 {
   local black='\[\033[00m\]'
   echo "$black"
 }
 
 # From http://engineerwithoutacause.com/show-current-virtualenv-on-bash-prompt.html
-function venv_prompt
+function venv_prompt()
 {
   local green='\[\033[32m\]'
   local venv=''
@@ -117,7 +131,8 @@ function venv_prompt
 }
 
 # From https://coderwall.com/p/pn8f0g
-function git_color {
+function git_color()
+{
   local red="\[\033[0;31m\]"
   local yellow="\[\033[0;33m\]"
   local green="\[\033[0;32m\]"
@@ -137,7 +152,8 @@ function git_color {
 }
 
 # From https://coderwall.com/p/pn8f0g
-function git_branch {
+function git_branch()
+{
   local git_status="$(git status 2> /dev/null)"
   local pattern="^On branch ([^${IFS}]*)"
 
@@ -152,17 +168,17 @@ function git_branch {
 ################################## SubPrompts ##################################
 ################################################################################
 
-function time_prompt
+function time_prompt()
 {
   echo "$(uncolor)[\A]"
 }
 
-function end_prompt
+function end_prompt()
 {
   echo "$(colorize)\$$(uncolor)"
 }
 
-function host_prompt
+function host_prompt()
 {
   if [[ "$(venv_prompt)" != "" ]]
   then
@@ -173,17 +189,17 @@ function host_prompt
   echo "$host"
 }
 
-function dir_prompt
+function dir_prompt()
 {
   echo "$(uncolor)[\W]"
 }
 
-function user_prompt
+function user_prompt()
 {
   echo "$(colorize)\u$(uncolor)"
 }
 
-function git_prompt
+function git_prompt()
 {
   echo "$(git_color)$(git_branch)$(uncolor)"
 }
@@ -194,12 +210,13 @@ function git_prompt
 ################################################################################
 
 ### Homebrewed
-function set_prompt
+function set_prompt()
 {
   PS1="$(time_prompt)$(user_prompt)@$(host_prompt):$(dir_prompt)$(git_prompt)$(end_prompt) "
 }
 
 ### Powerline-shell
-function _update_ps1() {
+function _update_ps1()
+{
    export PS1="$(~/powerline-shell.py --mode flat --cwd-max-depth 3 $? 2> /dev/null)"
 }
