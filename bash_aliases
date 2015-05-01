@@ -97,6 +97,9 @@ alias bcs='brew cask search'
 
 # gitjk: https://github.com/mapmeld/gitjk#gitjk
 alias gitjk="history 10 | tac | gitjk_cmd"
+# https://github.com/nvbn/thefuck
+alias fuck='eval $(thefuck $(fc -ln -1))'
+alias FUCK='fuck'
 
 # Node stuff
 #alias bode='babel-node'
