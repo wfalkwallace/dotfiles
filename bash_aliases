@@ -120,7 +120,6 @@ alias dashoff='defaults write com.apple.dashboard mcx-disabled -boolean YES; kil
 alias dashon='defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock'
 ################################################################################
 ### OPTIMIZELY
-alias mb="JS_BUILD_ARGS='--bundle bundle' make js"
 alias opt='cd ~/Documents/code/optimizely/optimizely'
 alias fe='cd ~/Documents/code/optimizely/frontend'
 alias ae='cd ~/Documents/code/optimizely/atomic-editor'
