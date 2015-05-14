@@ -121,6 +121,6 @@ alias dashon='defaults write com.apple.dashboard mcx-disabled -boolean NO; killa
 ################################################################################
 ### OPTIMIZELY
 alias opt='cd ~/Documents/code/optimizely/optimizely'
-alias fe='cd ~/Documents/code/optimizely/frontend'
+alias fe='cd ~/Documents/code/optimizely/optimizely/src/www/frontend'
 alias ae='cd ~/Documents/code/optimizely/atomic-editor'
 alias sdk='cd ~/Documents/code/optimizely/iOS-SDK'
