@@ -219,5 +219,5 @@ function set_prompt()
 ### Powerline-shell
 function _update_ps1()
 {
-   export PS1="$(~/powerline-shell.py --mode flat --cwd-max-depth 3 $? 2> /dev/null)"
+  export PS1="$(~/powerline-shell.py --mode flat --cwd-max-depth 3 $? 2> /dev/null)"
 }
