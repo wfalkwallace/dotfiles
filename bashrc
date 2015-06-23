@@ -3,11 +3,9 @@
 # William Falk-Wallace
 # .bashrc
 #
-# Template taken from Columbia University CRF Default bash profile
 
 export VISUAL EDITOR CDPATH PS1 PS2 PATH TERM ENV
-# Set your editor so that various programs (including git) will
-# know which one to run when they want you to type something.
+
 EDITOR=vim
 
 export TERM=xterm-256color
@@ -91,22 +89,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 ###############################BREW JUNK#######################################
 export PATH=/usr/local/bin:$PATH
-
-
-################################OPT JUNK#######################################
-export OPTIMIZELY_HOME="$HOME/Documents/code/optimizely/optimizely"
-if [ -d "$OPTIMIZELY_HOME" ]; then
-
-  # Add arcanist to PATH environment variable
-  export PATH=$PATH:$HOME/tools/arcanist/bin
-  # Move opt up for ruby/python/...
-  export PATH=$OPTIMIZELY_HOME/out:$PATH
-  # Add tab completion at the command-line
-  source ~/tools/arcanist/resources/shell/bash-completion
-
-  # Add powerline-shell
-  export PROMPT_COMMAND="_update_ps1;"
-fi
 
 
 ###############################VENV JUNK#######################################

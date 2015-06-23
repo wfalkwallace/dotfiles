@@ -25,7 +25,7 @@ function up()
 	cd $DIR
 }
 
-function openManInChrome()
+function openManPageInChrome()
 {
   man $1 | col -b | open -a /Applications/Google\ Chrome.app -f
 }

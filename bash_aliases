@@ -1,6 +1,9 @@
+#!/bin/bash
+#
 # William Falk-Wallace
 # .bash_aliases
 #
+
 
 ################################################################################
 ### BASICS
@@ -10,9 +13,9 @@ alias rm="rm -ri $*"
 alias cp="cp -i $*"
 
 alias ll="ls -alFG $*"
-alias mkdir='mkdir -pv'
+alias mkdir='mkdir -pv $*'
 alias path='echo -e ${PATH//:/\\n}'
-alias ax="chmod a+x"
+alias ax="chmod a+x $*"
 alias src="source ~/.bash_profile"
 alias c='clear'
 alias cd..='cd ..'
@@ -20,15 +23,17 @@ alias home='cd ~'
 alias desk='cd ~/Desktop'
 alias ducks='du -cksh *'
 alias histprof="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
-alias doc="openManInChrome $*"
+alias doc="openManPageInChrome $*"
 alias bro="bwana $*"
+alias uphour='caffeinate -t 3600'
+
+
 ################################################################################
 ### STATS
 alias now='date +"%m/%d/%y %T"'
 alias cpu='top -o cpu'
 alias mem='top -o rsize'
-alias cal12='cal 12 2013'
-alias uphour='caffeinate -t 3600'
+alias cal12='cal 6 2015'
 
 # current IP
 alias ip='curl icanhazip.com'
@@ -44,14 +49,20 @@ alias speed='speedtest --simple'
 
 # line count for file
 alias lc="awk 'END{print NR}' $*"
+
+
 ################################################################################
 ### PLACES
 alias code='cd ~/Documents/code'
 alias eclipse='cd ~/Documents/eclipse/workspace'
+
+
 ################################################################################
 ### FUN
 alias starwars='telnet towel.blinkenlights.nl'
 alias matrix='matrixish.sh'
+
+
 ################################################################################
 ### APPLICATIONS
 alias mou='open /Applications/Mou.app/ $*'
@@ -66,6 +77,8 @@ alias dash='open dash://$*'
 
 # st3 shortcut
 alias stt='subl .'
+
+
 ################################################################################
 ### GIT
 alias g='git'
@@ -77,6 +90,8 @@ alias push='git push'
 alias pull='git pull'
 alias branches='branches'
 alias brs='branches'
+
+
 ################################################################################
 ###TOOLS
 alias r='rails'
@@ -105,6 +120,8 @@ alias FUCK='fuck'
 #alias bode='babel-node'
 alias bode='babel-node --stage 1'
 alias bodemon='nodemon --exec babel-node -- --optional strict --stage 1 -- '
+
+
 ################################################################################
 ### OSX TRICKS
 # copy-paste in preview
@@ -118,9 +135,3 @@ alias showhiddenoff='defaults write com.apple.finder AppleShowAllFiles false; ki
 # dashboard control
 alias dashoff='defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock'
 alias dashon='defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock'
-################################################################################
-### OPTIMIZELY
-alias opt='cd ~/Documents/code/optimizely/optimizely'
-alias fe='cd ~/Documents/code/optimizely/optimizely/src/www/frontend'
-alias ae='cd ~/Documents/code/optimizely/atomic-editor'
-alias sdk='cd ~/Documents/code/optimizely/iOS-SDK'
