@@ -12,7 +12,7 @@ dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 backup=~/dotfiles_old
 # list of files/folders to symlink in homedir
 bash_files="bashrc bash_profile bash_aliases bash_functions bash_header"
-aux_files_2="gitconfig gitignore_global vimrc inputrc netrc ansiweatherrc"
+aux_files_2="gitconfig gitignore_global vimrc inputrc ansiweatherrc"
 aux_files_1="jrnl_config git-completion.bash assistant optimizelyrc"
 files="$bash_files $aux_files_1 $aux_files_2"
 # TODO: vim colors
