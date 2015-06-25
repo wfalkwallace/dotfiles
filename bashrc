@@ -26,19 +26,6 @@ PS1='[\A]\[\e[36m\]\u\[\e[0m\]@\h:[\W]'
 PROMPT_COMMAND="set_prompt"
 export PROMPT_COMMAND PS1 PS2 PATH
 
-# history #, basename of pwd
-#export PS1=":\[$WHITE\]\n\![\W]"
-# prints current branch name, colored based on git status
-#export PS1="$PS1\[\$(git_color)\]\$(git_branch)"
-#export PS1="$PS1 \$ "  # '#' for root, else '$'
-
-# set erase character to "back space"
-#stty erase ^H
-
-# Put your printer name after PRINTER and remove the # sign
-# to activate your printer name
-#PRINTER=your-printer-name; export PRINTER
-
 #guard against "fork-bomb" (cs3157)
 # ulimit -u 256
 
