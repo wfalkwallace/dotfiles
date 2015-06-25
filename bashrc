@@ -53,6 +53,11 @@ if [ -f "${HOME}/.bash_functions" ]; then
 	source "${HOME}/.bash_functions"
 fi
 
+### Outsource Optimizely RC
+if [ -f "${HOME}/.optimizelyrc" ]; then
+  source "${HOME}/.optimizelyrc"
+fi
+
 
 ####################################  ALSO  ####################################
 ### add scripts to path
