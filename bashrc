@@ -4,31 +4,27 @@
 # .bashrc
 #
 
-export VISUAL EDITOR CDPATH PS1 PS2 PATH TERM ENV
+##################################  EXPORTS  ###################################
 
+# Basics
 EDITOR=vim
-
-export TERM=xterm-256color
-
-# Put your favorite editor here, the default is vim
 VISUAL=vim
-
+TERM=xterm-256color
 CDPATH=:$HOME
-
-#POSIX startfile - not really important, I'll deal with it later
-ENV=$HOME/.profile
+ENV=$HOME/.profile #POSIX startfile - not really important, deal with it later
+export VISUAL EDITOR CDPATH TERM ENV
 
 # History file
 HISTFILE=$HOME/.bash_history
-: ${HISTSIZE:=500}
-export HISTSIZE
+HISTSIZE=1000
+export HISTFILE HISTSIZE
 
 # Standard PATH
 PATH=$HOME/bin:$PATH
-
 #Set up prompt
-export PS1='[\A]\[\e[36m\]\u\[\e[0m\]@\h:[\W]'
-export PROMPT_COMMAND="set_prompt"
+PS1='[\A]\[\e[36m\]\u\[\e[0m\]@\h:[\W]'
+PROMPT_COMMAND="set_prompt"
+export PROMPT_COMMAND PS1 PS2 PATH
 
 # history #, basename of pwd
 #export PS1=":\[$WHITE\]\n\![\W]"
@@ -43,71 +39,73 @@ export PROMPT_COMMAND="set_prompt"
 # to activate your printer name
 #PRINTER=your-printer-name; export PRINTER
 
-#Outsource Aliases
+#guard against "fork-bomb" (cs3157)
+# ulimit -u 256
+
+#################################  MODULARITY  #################################
+### Outsource Aliases
 if [ -f "${HOME}/.bash_aliases" ]; then
 	source "${HOME}/.bash_aliases"
 fi
 
-#Outsource Functions
+### Outsource Functions
 if [ -f "${HOME}/.bash_functions" ]; then
 	source "${HOME}/.bash_functions"
 fi
 
-#guard against "fork-bomb" (cs3157)
-# ulimit -u 256
 
-##############################  ALSO:  ######################################
+####################################  ALSO  ####################################
 ### add scripts to path
 export PATH=$PATH:~/Documents/code/scripts:~/Documents/code/scripts/3P
-### add pass: http://www.zx2c4.com/projects/password-store
-# source /usr/local/etc/bash_completion.d/password-store
+### add bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
-  complete -F _todo t
+  complete -F _todo t # alias todo and todo completion to t
 fi
-# Source git autocompletion
-# see http://stackoverflow.com/questions/342969/ -->
-# how-do-i-get-bash-completion-to-work-with-aliases/1793178
+### Source git autocompletion
+### see http://stackoverflow.com/questions/342969/ -->
+### how-do-i-get-bash-completion-to-work-with-aliases/1793178
 if [ -f "${HOME}/.git-completion.bash" ]; then
   source "${HOME}/.git-completion.bash"
-  __git_complete g __git_main
+  __git_complete g __git_main # alias git to g (2chars = big difference)
 fi
 
-###############################RUBY JUNK#######################################
-# Add RVM to PATH for scripting
+
+#################################  RUBY JUNK  ##################################
+### Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
-# Add Gems to PATH
+### Add Gems to PATH
 PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.0/bin
-# Load RVM into a shell session *as a function*
+### Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 
-##################################HEROKU JUNK##################################
+################################  HEROKU JUNK  #################################
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
 
-###############################BREW JUNK#######################################
+#################################  BREW JUNK  ##################################
 export PATH=/usr/local/bin:$PATH
 
 
-###############################VENV JUNK#######################################
+#################################  VENV JUNK  ##################################
 if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
   source /usr/local/bin/virtualenvwrapper.sh
   export WORKON_HOME=$HOME/.virtualenvs
 fi
 
 
-###############################TODO JUNK#######################################
+#################################  TODO JUNK  ##################################
 export TODOTXT_DEFAULT_ACTION=ls
 
 
-################################NVM JUNK#######################################
+##################################  NVM JUNK  ##################################
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 
-############################CAPPUCCINO JUNK####################################
+##############################  CAPPUCCINO JUNK  ###############################
 export NARWHAL_ENGINE=jsc
 export PATH="/usr/local/narwhal/bin:$PATH"
 export CAPP_BUILD="/Users/wfalkwallace/Build"
