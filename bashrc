@@ -40,7 +40,7 @@ if [ -f "${HOME}/.bash_functions" ]; then
 	source "${HOME}/.bash_functions"
 fi
 
-### Outsource Optimizely RC
+### Outsource Optimizely RC (untracked)
 if [ -f "${HOME}/.optimizelyrc" ]; then
   source "${HOME}/.optimizelyrc"
 fi
