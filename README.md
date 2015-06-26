@@ -3,4 +3,4 @@ dotfiles
 
 TODO:
 - vim colors
-- misc.
+- vimrc wtf
