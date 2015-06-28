@@ -113,5 +113,5 @@ alias showhiddenoff='defaults write com.apple.finder AppleShowAllFiles false; ki
 alias dashoff='defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock'
 alias dashon='defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock'
 
-alias safaripieon'defaults write com.apple.Safari DebugUsePieProgressIndicator -bool true'
-alias safaripieoff'defaults write com.apple.Safari DebugUsePieProgressIndicator -bool false'
+alias safaripieon='defaults write com.apple.Safari DebugUsePieProgressIndicator -bool true'
+alias safaripieoff='defaults write com.apple.Safari DebugUsePieProgressIndicator -bool false'
