@@ -14,7 +14,7 @@
 	f = fetch
 	issues = !hub browse -- issues
 	last = log -1 HEAD
-	ls = log --pretty=oneline -3
+	ls = log --pretty=oneline -5
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	l = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
   lp = log --graph --decorate --pretty=oneline --abbrev-commit
