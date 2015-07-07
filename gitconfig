@@ -30,9 +30,9 @@
 	rh2 = reset HEAD^^ --hard
 	s = status
 	settings = !hub browse -- settings
+  st = stash # this messes everyone up
 	sl = stash list
 	sp = stash pop
-	st = stash
 	unstage = reset HEAD --
 	url = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f"
 	vis = !gitk
@@ -40,7 +40,6 @@
   ag = "!sh -c 'git ls-files -m -o --exclude-standard | grep $1 | xargs -r git add' -" # 'add grep' stages all new+changed that match $1
   cg = "!sh -c 'git ls-files -m | grep $1 | xargs -r git checkout' -" # 'checkout grep' checkouts any files that match $1
   cherry = cherry-pick
-  comit = commit
   dc = diff --cached --ignore-space-change
   df = diff --ignore-space-change
   dg = "!sh -c 'git ls-files -m | grep $1 | xargs -r git diff' -" # 'diff grep' diffs any files that match $1
@@ -74,7 +73,7 @@
 [push]
   default = current
 [pull]
-  # rebase = true
+  # rebase = true # I dont like requiring this always
 [status]
   submodulesummary = true
 [help]
