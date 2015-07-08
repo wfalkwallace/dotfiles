@@ -7,23 +7,23 @@
 ##################################  EXPORTS  ###################################
 
 # Basics
-EDITOR=vim
-VISUAL=vim
-TERM=xterm-256color
-CDPATH=:$HOME
+EDITOR=vim # duh
+VISUAL=vim # duh
+TERM=xterm-256color # mostly for legacy systems
+CDPATH=:$HOME # default cd path
 ENV=$HOME/.profile #POSIX startfile - not really important, deal with it later
 export VISUAL EDITOR CDPATH TERM ENV
 
 # History file
-HISTFILE=$HOME/.bash_history
-HISTSIZE=1000
+HISTFILE=$HOME/.bash_history # where to store command history
+HISTSIZE=1000 # dont need that much history
 export HISTFILE HISTSIZE
 
 # Standard PATH
 PATH=$HOME/bin:$PATH
 #Set up prompt
-PS1='[\A]\[\e[36m\]\u\[\e[0m\]@\h:[\W]'
-PROMPT_COMMAND="set_prompt"
+PS1='[\A]\[\e[36m\]\u\[\e[0m\]@\h:[\W]' # basic ps1
+PROMPT_COMMAND="set_prompt" # custom bash prompt function
 export PROMPT_COMMAND PS1 PS2 PATH
 
 #guard against "fork-bomb" (cs3157)
@@ -47,7 +47,7 @@ fi
 
 
 ####################################  ALSO  ####################################
-### add scripts to path
+### add personal third party scripts to path
 export PATH=$PATH:~/Documents/code/scripts:~/Documents/code/scripts/3P
 ### add bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
