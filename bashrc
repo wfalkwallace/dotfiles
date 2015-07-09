@@ -52,7 +52,6 @@ export PATH=$PATH:~/Documents/code/scripts:~/Documents/code/scripts/3P
 ### add bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
-  complete -F _todo t # alias todo and todo completion to t
 fi
 ### Source git autocompletion
 ### see http://stackoverflow.com/questions/342969/ -->
@@ -86,10 +85,6 @@ if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
   source /usr/local/bin/virtualenvwrapper.sh
   export WORKON_HOME=$HOME/.virtualenvs
 fi
-
-
-#################################  TODO JUNK  ##################################
-export TODOTXT_DEFAULT_ACTION=ls
 
 
 ##################################  NVM JUNK  ##################################
