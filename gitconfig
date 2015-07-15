@@ -20,7 +20,8 @@
   lp = log --graph --decorate --pretty=oneline --abbrev-commit
 	p = push
 	pb = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f | pbcopy"
-	pu = pull
+  pu = pull
+  pur = pull --rebase
 	r = reset
 	r1 = reset HEAD^
 	r2 = reset HEAD^^
