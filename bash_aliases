@@ -100,7 +100,7 @@ alias bode='babel-node --stage 1  $*'
 alias bodemon='nodemon --exec babel-node -- --optional strict --stage 1 --  $*'
 
 
-#################################  OSX TRICKS  #################################
+#################################  OSX HACKS  ##################################
 # copy-paste in preview
 alias qlpbon='defaults write com.apple.finder QLEnableTextSelection -bool TRUE; killall Finder'
 alias qlpboff='defaults write com.apple.finder QLEnableTextSelection -bool FALSE; killall Finder'
@@ -113,5 +113,10 @@ alias showhiddenoff='defaults write com.apple.finder AppleShowAllFiles false; ki
 alias dashoff='defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock'
 alias dashon='defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock'
 
+# safari loading pie instead of bar
 alias safaripieon='defaults write com.apple.Safari DebugUsePieProgressIndicator -bool true'
 alias safaripieoff='defaults write com.apple.Safari DebugUsePieProgressIndicator -bool false'
+
+# yosemite press and hold key repeat
+alias keyrepeaton defaults write -g ApplePressAndHoldEnabled -bool false
+alias keyrepeatoff defaults write -g ApplePressAndHoldEnabled -bool true
