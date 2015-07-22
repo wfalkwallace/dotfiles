@@ -118,5 +118,5 @@ alias safaripieon='defaults write com.apple.Safari DebugUsePieProgressIndicator 
 alias safaripieoff='defaults write com.apple.Safari DebugUsePieProgressIndicator -bool false'
 
 # yosemite press and hold key repeat
-alias keyrepeaton defaults write -g ApplePressAndHoldEnabled -bool false
-alias keyrepeatoff defaults write -g ApplePressAndHoldEnabled -bool true
+alias keyrepeaton = 'defaults write -g ApplePressAndHoldEnabled -bool false'
+alias keyrepeatoff = 'defaults write -g ApplePressAndHoldEnabled -bool true'
