@@ -13,7 +13,7 @@ backup=dotfiles_old
 # list of files/folders to symlink in homedir
 bash_files="bashrc bash_profile bash_aliases bash_functions bash_header"
 git_files="gitconfig gitignore_global git-completion.bash"
-aux_files="vimrc inputrc optimizelyrc"
+aux_files="vimrc inputrc"
 files="$bash_files $git_files $aux_files"
 
 ###############################################################################
