@@ -2,9 +2,10 @@ dotfiles
 ========
 
 TODO:
-- vim colors
-- vimrc wtf
+- vimrc
 - nvmrc
 - rvmrc
+- tmuxrc
 - .gh.json
 - eslintrc needs more rules
+- make script (brew, tmux, vim, symlink)
