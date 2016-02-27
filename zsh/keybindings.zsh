@@ -20,7 +20,7 @@ bindkey '^?' backward-delete-char # TODO: Investigate this
 bindkey '^r' history-incremental-search-backward # TODO: Investigate this
 bindkey '^R' history-incremental-search-backward # TODO: Investigate this
 bindkey '^u' backward-kill-line
-bindkey -v # vim mode # TODO: Investigate this
+# bindkey -v # vim mode # TODO: Investigate this
 
 # C-x C-e to edit
 autoload -U edit-command-line # TODO: Investigate this

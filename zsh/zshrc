@@ -4,8 +4,6 @@
 # .zshrc
 #
 
-cat ~/.bash_header
-
 ################################  ZSH EXPORTS  #################################
 export ZSH=/Users/fww/.oh-my-zsh # Path to your oh-my-zsh installation.
 export ZSH_THEME="agnoster" # theme to load (from ~/.oh-my-zsh/themes)
@@ -32,10 +30,18 @@ export HISTTIMEFORMAT="%F %T " # TODO: Document this
 export CLICOLOR=true
 export LSCOLORS="exfxcxdxbxegedabagacad"
 
-################################  OTHER CONFIG  ################################
 ### initialize autocomplete
 autoload -Uz compinit
 compinit
+
+# wd - warp directory
+# tmuxinator
+# virtualenvwrapper
+# chucknorris
+plugins=(git git-extras compleat rails tmux)
+source $ZSH/oh-my-zsh.sh
+
+################################  OTHER CONFIG  ################################
 
 typeset DOTFILES # explicitly locally declare the variable
 DOTFILES=~/.dotfiles # the location of my dotfiles TODO: make this generic
@@ -47,10 +53,3 @@ for file in ${CONFIG_FILES:#*/path.zsh}; do # see "Parameter Expansion"
   source $file
 done
 unset CONFIG_FILES DOTFILES
-
-# wd - warp directory
-# tmuxinator
-# virtualenvwrapper
-# chucknorris
-plugins=(git git-extras compleat rails tmux)
-source $ZSH/oh-my-zsh.sh
