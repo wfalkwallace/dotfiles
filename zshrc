@@ -13,6 +13,7 @@ export ENABLE_CORRECTION="true" # enable command auto-correction
 # export COMPLETION_WAITING_DOTS="true" # display red dots while waiting for completion
 # export HIST_STAMPS="yyyy-mm-dd" # cmd timer in history cmd output
 # export ZSH_CUSTOM=/path/to/new-custom-folder # custom folder other than $ZSH/custom
+ZSH_TMUX_AUTOSTART=true # tmux
 
 ###############################  OTHER EXPORTS  ################################
 ### Basics
@@ -43,13 +44,21 @@ source $ZSH/oh-my-zsh.sh
 
 ################################  OTHER CONFIG  ################################
 
-typeset DOTFILES # explicitly locally declare the variable
-DOTFILES=~/.dotfiles # the location of my dotfiles TODO: make this generic
-source $DOTFILES/**/path.zsh # load the path file
+CONFIG_FILES=(zsh_aliases     \
+              zsh_completion  \
+              zsh_config      \
+              zsh_functions   \
+              zsh_keybindings \
+              zsh_options)
+
+source ~/.zsh_path # load the path file
 ### load everything but the path file (loaded above)
-typeset -U CONFIG_FILES # declare the variable as a unique list
-CONFIG_FILES=($DOTFILES/**/*.zsh) # zshrc does not have extension
-for file in ${CONFIG_FILES:#*/path.zsh}; do # see "Parameter Expansion"
-  source $file
+for file in $CONFIG_FILES; do
+  source ~/.$file
 done
-unset CONFIG_FILES DOTFILES
+
+### Outsource Local Configs
+if [ -f "${HOME}/.googlerc" ]; then
+  source "${HOME}/.googlerc"
+fi
+
