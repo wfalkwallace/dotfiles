@@ -1,0 +1,29 @@
+#!/bin/zsh
+#
+# William Falk-Wallace
+# google.zsh
+#
+
+### update git config email
+git config --global user.email fww@google.com
+
+### goog reauth script
+alias auth='auth-refresh-gtunnel.par'
+### set up default ssh host for reauth script
+AUTH_HOST=fww
+AUTH_CORP_SUBDOMAIN=mtv
+export AUTH_HOST AUTH_CORP_SUBDOMAIN
+
+### update PATH for the Google Cloud SDK
+source '/Users/fww/google-cloud-sdk/path.zsh.inc'
+### enable shell command completion for gcloud
+source '/Users/fww/google-cloud-sdk/completion.zsh.inc'
+
+### override oh-my-zsh agnoster hg prompt for g4
+prompt_hg() {
+ local working_dir=`pwd`
+   if [[ $working_dir == "/google/src/cloud/$USER/"* ]]; then
+   path_array=(${(ps:/:)${working_dir}})
+ printf "%%{$fg[yellow]%%}(%s)%%{$reset_color%%}" $path_array[5]
+ fi
+}

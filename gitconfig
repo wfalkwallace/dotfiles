@@ -1,6 +1,6 @@
 [user]
 	name = William Falk-Wallace
-	email = wgf2104@columbia.edu
+  email = wgf2104@columbia.edu
 [core]
 	excludesfile = ~/.gitignore_global
 [alias]
