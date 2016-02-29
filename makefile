@@ -23,7 +23,7 @@ dotfiles: $(ROOT_DIR)
 vim: $(VIMRC)
 	mkdir -p $(VIM_BUNDLE_DIR)
 	git clone http://github.com/gmarik/vundle.git $(VUNDLE)
-	vim +BundleInstall! +BundleClean +qall
+	vim +PluginInstall! +PluginClean +qall
 
 # install homebrew
 $(BREW):
