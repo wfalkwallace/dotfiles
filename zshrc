@@ -5,7 +5,7 @@
 #
 
 ################################  ZSH EXPORTS  #################################
-export ZSH=/Users/fww/.oh-my-zsh # Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh # Path to your oh-my-zsh installation.
 export ZSH_THEME="agnoster" # theme to load (from ~/.oh-my-zsh/themes)
 export CASE_SENSITIVE="false" # use case-insensitive completion
 export HYPHEN_INSENSITIVE="true" # use hyphen-insensitive completion
