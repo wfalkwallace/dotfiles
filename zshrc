@@ -35,6 +35,8 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 autoload -Uz compinit
 compinit
 
+source ~/.zsh_path # load the path file
+
 # wd - warp directory
 # tmuxinator
 # virtualenvwrapper
@@ -51,7 +53,6 @@ CONFIG_FILES=(zsh_aliases     \
               zsh_keybindings \
               zsh_options)
 
-source ~/.zsh_path # load the path file
 ### load everything but the path file (loaded above)
 for file in $CONFIG_FILES; do
   source ~/.$file
