@@ -1,10 +1,12 @@
 ROOT_DIR        := $(shell dirname "$0")
 VIM_BUNDLE_DIR  := $(HOME)/.vim/bundle
 BIN_DIR         := $(HOME)/homebrew/bin
+LINUX_BIN_DIR		:= /usr/bin
 VUNDLE          := $(VIM_BUNDLE_DIR)/vundle
 VIMRC           := $(HOME)/.vimrc
 BREW            := $(BIN_DIR)/brew
 TMUX            := $(BIN_DIR)/tmux
+LINUX_TMUX      := $(LINUX_BIN_DIR)/tmux
 CTAGS           := $(BIN_DIR)/ctags
 
 .PHONY: all
@@ -12,6 +14,9 @@ all: shell vim
 
 .PHONY: shell
 shell: dotfiles $(TMUX) $(CTAGS)
+
+.PHONY: linux
+linux: dotfiles $(LINUX_TMUX) vim
 
 # symlink core dotfiles to home directory
 .PHONY: dotfiles
@@ -33,6 +38,9 @@ $(BREW):
 $(TMUX): $(BREW)
 	brew install reattach-to-user-namespace # tmux pb correction
 	brew install tmux
+
+$(LINUX_TMUX):
+	sudo apt-get install tmux
 
 # install CTAGS
 $(CTAGS): $(BREW)
