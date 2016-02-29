@@ -25,7 +25,7 @@ vim: $(VIMRC)
 	git clone http://github.com/gmarik/vundle.git $(VUNDLE)
 	vim +BundleInstall! +BundleClean +qall
 
-# install homebrew TODO: brew rules for linux
+# install homebrew
 $(BREW):
 	ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
@@ -37,3 +37,6 @@ $(TMUX): $(BREW)
 # install CTAGS
 $(CTAGS): $(BREW)
 	brew install ctags-exuberant
+
+# TODO: https://help.github.com/articles/caching-your-github-password-in-git/
+# TODO: brew rules for linux
