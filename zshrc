@@ -63,3 +63,7 @@ if [ -f "${HOME}/.googlerc" ]; then
   source "${HOME}/.googlerc"
 fi
 
+### Outsource Local Configs
+if [ -f "${HOME}/.localrc" ]; then
+  source "${HOME}/.localrc"
+fi
