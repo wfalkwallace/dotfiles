@@ -35,8 +35,8 @@ files=($zsh_files \
 
 # create dotfiles_old in homedir
 print "\x1b[32;01m" "Creating $backup for backup of any existing dotfiles in ~"
-print $fg[red] "mkdir -p ~/$backup"
-mkdir -p $HOME/$backup
+print $fg[red] "mkdir -p $backup"
+mkdir -p $backup
 
 # move any existing dotfiles in dir to backup directory, then create symlinks
 for file in $files; do

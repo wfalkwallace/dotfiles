@@ -63,3 +63,7 @@ if [ -f "${HOME}/.googlerc" ]; then
   source "${HOME}/.googlerc"
 fi
 
+### Override zsh-theme prompt helper
+prompt_dir() {
+  prompt_segment blue black '%1d'
+}
