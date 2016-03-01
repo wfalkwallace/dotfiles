@@ -13,7 +13,7 @@ setopt HIST_VERIFY # TODO: Investigate this
 setopt SHARE_HISTORY # share history between sessions # TODO: Investigate this
 setopt EXTENDED_HISTORY # add timestamps to history
 setopt PROMPT_SUBST # TODO: Investigate this
-# setopt CORRECT # enable autocorrection suggestions
+unsetopt CORRECT # disable autocorrection suggestions
 setopt COMPLETE_IN_WORD # TODO: Investigate this
 setopt IGNORE_EOF # TODO: Investigate this
 setopt INC_APPEND_HISTORY  # adds history incrementally
