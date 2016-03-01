@@ -1,0 +1,7 @@
+#!/bin/zsh
+#
+# William Falk-Wallace
+# osxrc
+#
+
+alias subl="reattach-to-user-namespace subl"

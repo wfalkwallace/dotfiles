@@ -63,7 +63,16 @@ if [ -f "${HOME}/.googlerc" ]; then
   source "${HOME}/.googlerc"
 fi
 
+### Outsource OSX-specific Configs
+if [ -f "${HOME}/.osxrc" ]; then # TODO: check for OSX
+  source "${HOME}/.osxrc"
+fi
+
 ### Outsource Local Configs
 if [ -f "${HOME}/.localrc" ]; then
   source "${HOME}/.localrc"
 fi
+### Override zsh-theme prompt helper
+prompt_dir() {
+  prompt_segment blue black '%1d'
+}
