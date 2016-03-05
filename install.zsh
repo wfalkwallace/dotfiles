@@ -19,6 +19,7 @@ zsh_files=(osxrc             \
            zsh_keybindings   \
            zsh_options       \
            zsh_path          \
+           zsh_prompt        \
            zshrc)
 git_files=(gitconfig         \
            gitignore_global)
