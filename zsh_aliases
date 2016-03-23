@@ -1,7 +1,7 @@
 #!/bin/zsh
 #
 # William Falk-Wallace
-# aliases.zsh
+# zsh_aliases
 #
 
 ###################################  BASICS  ###################################
@@ -49,10 +49,6 @@ alias lc="awk 'END{print NR}'" # line count for file
 ### current IP
 alias ip='curl icanhazip.com'
 alias ip2='curl ifconfig.me'
-### wifi info
-alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
-alias wifi='airport -I' # TODO: Document
-alias wifiscan='airport -s' # TODO: Document
 
 ###################################  PLACES  ###################################
 alias code='cd ~/code'
@@ -85,24 +81,3 @@ alias brs='branches'
 ###################################  TOOLS  ####################################
 alias serv='python -m SimpleHTTPServer 9999' # start a python server in the current directory
 alias todo="awk '/TODO/ {print NR "'"\t" ($1=$2="")'" $0}'" # find all todos in src file
-
-#################################  OSX HACKS  ##################################
-# copy-paste in preview
-alias qlpbon='defaults write com.apple.finder QLEnableTextSelection -bool TRUE; killall Finder'
-alias qlpboff='defaults write com.apple.finder QLEnableTextSelection -bool FALSE; killall Finder'
-
-# show hidden files
-alias showhiddenon='defaults write com.apple.finder AppleShowAllFiles true; killall Finder'
-alias showhiddenoff='defaults write com.apple.finder AppleShowAllFiles false; killall Finder'
-
-# dashboard control
-alias dashoff='defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock'
-alias dashon='defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock'
-
-# safari loading pie instead of bar
-alias safaripieon='defaults write com.apple.Safari DebugUsePieProgressIndicator -bool true'
-alias safaripieoff='defaults write com.apple.Safari DebugUsePieProgressIndicator -bool false'
-
-# yosemite press and hold key repeat
-alias keyrepeaton='defaults write -g ApplePressAndHoldEnabled -bool false'
-alias keyrepeatoff='defaults write -g ApplePressAndHoldEnabled -bool true'

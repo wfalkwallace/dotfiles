@@ -1,23 +1,23 @@
 #!/bin/zsh
 #
 # William Falk-Wallace
-# options.zsh
+# zsh_options
 #
 
-setopt NO_BG_NICE # don't nice background tasks
-setopt NO_HUP # TODO: Investigate this
-setopt NO_LIST_BEEP # don't beep on autocomplete options list
-setopt LOCAL_OPTIONS # allow functions to have local options
-setopt LOCAL_TRAPS # allow functions to have local traps
-setopt HIST_VERIFY # TODO: Investigate this
-setopt SHARE_HISTORY # share history between sessions # TODO: Investigate this
-setopt EXTENDED_HISTORY # add timestamps to history
-setopt PROMPT_SUBST # TODO: Investigate this
-setopt CORRECT # TODO: Investigate this
-setopt COMPLETE_IN_WORD # TODO: Investigate this
-setopt IGNORE_EOF # TODO: Investigate this
-setopt INC_APPEND_HISTORY  # adds history incrementally
-setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
-setopt HIST_REDUCE_BLANKS # TODO: Investigate this
+setopt no_bg_nice # don't nice background tasks
+setopt no_hup # TODO: Investigate this
+setopt no_list_beep # don't beep on autocomplete options list
+setopt local_options # allow functions to have local options
+setopt local_traps # allow functions to have local traps
+setopt hist_verify # TODO: Investigate this
+setopt share_history # share history between sessions # TODO: Investigate this
+setopt extended_history # add timestamps to history
+setopt prompt_subst # TODO: Investigate this
+unsetopt correct_all # disable autocorrection suggestions
+setopt complete_in_word # TODO: Investigate this
+setopt ignore_eof # TODO: Investigate this
+setopt inc_append_history  # adds history incrementally
+setopt hist_ignore_all_dups  # don't record dupes in history
+setopt hist_reduce_blanks # TODO: Investigate this
 setopt complete_aliases # don't expand aliases _before_ completion has finished
 unsetopt nomatch # if no completion matches leave unchanged, don't print error

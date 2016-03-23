@@ -11,7 +11,7 @@ dir="$(dirname "$0")"
 # old dotfiles backup directory, dated
 backup=$HOME/.dotfiles_$(date "+%Y_%m_%d")
 # list of files/folders to symlink in homedir
-zsh_files=(googlerc          \
+zsh_files=(osxrc             \
            zsh_aliases       \
            zsh_completion    \
            zsh_config        \
@@ -19,6 +19,7 @@ zsh_files=(googlerc          \
            zsh_keybindings   \
            zsh_options       \
            zsh_path          \
+           zsh_prompt        \
            zshrc)
 git_files=(gitconfig         \
            gitignore_global)
@@ -35,8 +36,8 @@ files=($zsh_files \
 
 # create dotfiles_old in homedir
 print "\x1b[32;01m" "Creating $backup for backup of any existing dotfiles in ~"
-print $fg[red] "mkdir -p ~/$backup"
-mkdir -p $HOME/$backup
+print $fg[red] "mkdir -p $backup"
+mkdir -p $backup
 
 # move any existing dotfiles in dir to backup directory, then create symlinks
 for file in $files; do

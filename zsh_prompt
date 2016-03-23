@@ -1,0 +1,56 @@
+#!/bin/zsh
+#
+# William Falk-Wallace
+# zsh_prompt
+#
+
+############################## OLD PROMPT HELPERS ##############################
+### return a random bash color code
+function colorize()
+{
+  local color="$(($RANDOM % 2));$(($RANDOM % 7 + 30))m"
+  echo "\[\033[$color\]"
+}
+
+### return standard thin black bash color code
+function uncolor()
+{
+  local black='\[\033[00m\]'
+  echo "$black"
+}
+
+### return a colored venv environment information string
+# From engineerwithoutacause.com/show-current-virtualenv-on-bash-prompt.html
+function venv_prompt()
+{
+  local green='\[\033[32m\]'
+  local venv=''
+  if [[ $VIRTUAL_ENV != "" ]]
+  then
+    local venv="$green{${VIRTUAL_ENV##*/}}$(uncolor)"
+  fi
+  echo "$venv"
+}
+
+### return a colored git branch information string
+# From coderwall.com/p/pn8f0g
+function git_branch()
+{
+  local git_status="$(git status 2> /dev/null)"
+  local pattern="^On branch ([^${IFS}]*)"
+
+  if [[ $git_status =~ $pattern ]]; then
+    local branch=${BASH_REMATCH[1]}
+    echo "($branch)"
+  fi
+}
+
+############################## AGNOSTER OVERRIDES ##############################
+### set the powerline shell right-prompt
+# from http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
+RPrompt='date +"%T"'
+
+### Override zsh-theme prompt directory helper for brevity
+prompt_dir() {
+  prompt_segment blue black '%1d'
+}

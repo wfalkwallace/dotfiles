@@ -51,15 +51,25 @@ CONFIG_FILES=(zsh_aliases     \
               zsh_config      \
               zsh_functions   \
               zsh_keybindings \
-              zsh_options)
+              zsh_options     \
+              zsh_prompt)
 
 ### load everything but the path file (loaded above)
 for file in $CONFIG_FILES; do
   source ~/.$file
 done
 
-### Outsource Local Configs
+### Outsource Contextual Configs
 if [ -f "${HOME}/.googlerc" ]; then
   source "${HOME}/.googlerc"
 fi
 
+### Outsource OSX-Specific Configs
+if [ -f "${HOME}/.osxrc" ]; then # TODO: check for OSX
+  source "${HOME}/.osxrc"
+fi
+
+### Outsource Local-Machine Configs
+if [ -f "${HOME}/.localrc" ]; then
+  source "${HOME}/.localrc"
+fi
