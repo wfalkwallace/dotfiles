@@ -11,8 +11,7 @@ dir="$(dirname "$0")"
 # old dotfiles backup directory, dated
 backup=$HOME/.dotfiles_$(date "+%Y_%m_%d")
 # list of files/folders to symlink in homedir
-zsh_files=(osxrc             \
-           zsh_aliases       \
+zsh_files=(zsh_aliases       \
            zsh_completion    \
            zsh_config        \
            zsh_functions     \
