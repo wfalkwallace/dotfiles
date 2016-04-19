@@ -1,0 +1,44 @@
+#!/bin/zsh
+#
+# William Falk-Wallace
+# zsh_functions
+#
+
+# TODO: Investigate fpath, autoload
+###############################  MISC FUNCTIONS  ###############################
+### cd up-tree by specifying the number of jumps (ie. up 3 === cd ../../../)
+function up()
+{
+  ALTITUDE=1
+  if [ ! -z $1 ]; then
+    ALTITUDE=$1
+  fi
+
+  DIR=""
+  for ((i = 0; i < ALTITUDE; i++)); do
+    DIR="../$DIR"
+  done
+
+  cd $DIR
+}
+### open the specified manpage in chrome
+function openManPageInChrome()
+{
+  if [ $# -ne 1 ]; then
+    echo "Usage: openManPageInChrome <cmd>"
+  fi
+  man $1 | col -b | open -a /Applications/Google\ Chrome.app -f
+}
+
+#############################  GIT + GITHUB HACKS  #############################
+### from ifandelse.com/listing-git-branches-in-order-of-most-recent-commit
+function branches()
+{
+  git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)|%(committerdate:iso)|%(authorname)' |
+    sed 's/refs\/heads\///g' |
+    grep -v BACKUP  |
+    while IFS='|' read branch date author
+    do
+        printf '%-15s %-30s %s\n' "$branch" "$date" "$author"
+    done
+}

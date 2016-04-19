@@ -1,0 +1,18 @@
+#!/bin/zsh
+#
+# William Falk-Wallace
+# zsh_config
+#
+
+#################################  VENV JUNK  ##################################
+if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
+  source /usr/local/bin/virtualenvwrapper.sh
+  export WORKON_HOME=$HOME/.virtualenvs
+fi
+
+##################################  NVM JUNK  ##################################
+if which brew &>/dev/null; then
+  export NVM_DIR=~/.nvm
+  source $(brew --prefix nvm)/nvm.sh
+fi
+

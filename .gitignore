@@ -1,2 +1,4 @@
+googlerc
+localrc
 optimizelyrc
-netrc
+secrets.zsh

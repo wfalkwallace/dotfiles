@@ -1,8 +1,0 @@
-"\e[A": history-search-backward           # search history in context of buffer
-"\e[B": history-search-forward            # search history in context of buffer
-set completion-prefix-display-length 6    # show diff b/w completion and value
-set show-all-if-ambiguous on              # double-tab? pshaw
-set completion-ignore-case on             # ignore case in tab completion
-set completion-map-case on                # treat _ and - equally in completion
-Control-j: menu-complete                  # cycle through completions inline
-# Control-k: menu-complete-backward       # cycle through completions inline
