@@ -52,5 +52,5 @@ RPrompt='date +"%T"'
 
 ### Override zsh-theme prompt directory helper for brevity
 prompt_dir() {
-  prompt_segment blue black '%1d'
+  prompt_segment blue black '%1d' # TODO: fix for g3
 }
