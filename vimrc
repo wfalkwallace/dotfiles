@@ -1,82 +1,106 @@
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
+" PREP
+" ##############################################################################
 " Use Vim settings, rather than Vi settings.
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+
+" PLUGINS
+" ##############################################################################
+" Load vim-plug (https://jordaneldredge.com/blog/why-i-switched-from-vundle-to-plug/)
+if empty(glob("~/.vim/autoload/plug.vim"))
+    execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-sensible'
+
+" Syntax
+Plug 'vim-ruby/vim-ruby', { 'for': 'rb'}
+Plug 'moll/vim-node', { 'for': 'js'}
+Plug 'pangloss/vim-javascript', { 'for': 'js'}
+Plug 'othree/html5.vim', { 'for': 'html'}
+Plug 'leshill/vim-json', { 'for': 'js'}
+Plug 'tpope/vim-markdown', { 'for': 'md'}
+Plug 'mxw/vim-jsx', { 'for': 'jsx'}
+Plug 'tpope/vim-rails', { 'for': 'rb'}
+
+" Navigation
+Plug 'tpope/vim-vinegar'
+Plug 'scrooloose/nerdtree', { 'on': 'NerdTree' }
+
+" Utility
+Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'rstacruz/sparkup'
+Plug 'tpope/vim-endwise', { 'for': 'rb'}
+Plug 'tpope/vim-surround'
+Plug 'gorkunov/smartpairs.vim'
+
+" Git
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-fugitive'
+
+" Color Schemes
+Plug 'altercation/vim-colors-solarized'
+Plug 'ajh17/Spacegray.vim'
+
+" Look into more:
+" valloric/YouCompleteMe
+" easymotion/vim-easymotion
+" tpope/vim-sleuth
+" tpope/vim-unimpaired
+" rking/ag.vim
+" tpope/vim-eunuch
+" christoomey/vim-tmux-navigator
+" junegunn/fzf
+" christoomey/vim-tmux-runner
+
+call plug#end() "Add plugins to &runtimepath
+
+
+" SETUP
+" ##############################################################################
+" Enable file type detection and load indent/plugin files
+filetype indent plugin on
+" Allow backspacing over autoindent, line breaks and start of insert action.
 set backspace=indent,eol,start
-set smartindent                                                                 " always set smartindenting on
-syntax on                                                                       " syntax on
-set number                                                                      " line numbers
-set hlsearch                                                                    " highlight last used search pattern
+" Always set smartindenting on.
+set smartindent
+" Syntax on.
+syntax on
+" Line numbers.
+set number
+" Relative line numbers.
+set relativenumber
+" Highlight last used search pattern.
+set hlsearch
+" Keep 50 lines of command line history.
+set history=1000
+" Show the cursor position all the time.
+set ruler
+" Display incomplete commands.
+set showcmd
+" Do incremental searching.
+set incsearch
+" Use zsh.
+set shell=/bin/zsh
 
-
-set history=50		                                                              " keep 50 lines of command line history
-set ruler		                                                                    " show the cursor position all the time
-set showcmd		                                                                  " display incomplete commands
-set incsearch		                                                                " do incremental searching
-
-" In many terminal emulators the mouse works just fine, thus enable it.
+" In many terminal emulators the mouse works just fine, so enable it.
 if has('mouse')
   set mouse=a
 endif
 
+" Set color scheme settings.
+set background=dark
+colorscheme solarized
 
-
-
-
-
-
-
-
-
-map Q gq    " Don't use Ex mode, use Q for formatting
-
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
-
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-
-  augroup END
-
-else
-
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
-endif
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim) or on gitcommit file types. Also
+" don't do it when the mark is in the first line, that is the default
+" position when opening a file.
+autocmd BufReadPost *
+  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
