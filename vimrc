@@ -29,6 +29,8 @@ Plug 'tpope/vim-rails', { 'for': 'rb'}
 " Navigation
 Plug 'tpope/vim-vinegar'
 Plug 'scrooloose/nerdtree', { 'on': 'NerdTree' }
+Plug 'sjl/gundo.vim'
+Plug 'rking/ag.vim'
 
 " Utility
 Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
@@ -42,7 +44,8 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 
 " Color Schemes
-Plug 'altercation/vim-colors-solarized'
+" Plug 'sjl/badwolf'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'ajh17/Spacegray.vim'
 
 " Look into more:
@@ -61,31 +64,60 @@ call plug#end() "Add plugins to &runtimepath
 
 " SETUP
 " ##############################################################################
-" Enable file type detection and load indent/plugin files
-filetype indent plugin on
-" Allow backspacing over autoindent, line breaks and start of insert action.
-set backspace=indent,eol,start
-" Always set smartindenting on.
-set smartindent
-" Syntax on.
-syntax on
-" Line numbers.
-set number
-" Relative line numbers.
-set relativenumber
-" Highlight last used search pattern.
-set hlsearch
-" Keep 50 lines of command line history.
-set history=1000
-" Show the cursor position all the time.
-set ruler
-" Display incomplete commands.
-set showcmd
-" Do incremental searching.
-set incsearch
-" Use zsh.
-set shell=/bin/zsh
+filetype indent plugin on " load filetype-specific indent files
+set backspace=indent,eol,start " Allow backspacing over autoindent, line breaks and start of insert action.
+set smartindent " Always set smartindenting on.
+syntax on " Syntax processing on.
+set number " Line numbers.
+set relativenumber " Relative line numbers.
+set incsearch " Do incremental searching.
+set hlsearch " Highlight search matches.
+set history=1000 " Keep 50 lines of command line history.
+set ruler " Show the cursor position all the time.
+set showcmd " Display incomplete commands.
+set shell=/bin/zsh " Use zsh.
+set wildmenu " Visual autocomplete for command menu.
+set ignorecase " Use case insensitive search, except when using capital letters.
+set smartcase " ???
+set nostartofline " Stop certain movements from going to the first character of a line.
+set ruler " Display the cursor position.
+set laststatus=2 " Always display the status line, even if only one window is displayed.
+set visualbell " Use visual bell instead of beeping when doing something wrong.
+" set t_vb= " Reset the terminal code for the visual bell.
+set pastetoggle=<F11> " Use <F11> to toggle between 'paste' and 'nopaste'.
+set tabstop=2 " Number of visual spaces per TAB.
+set shiftwidth=2 " ???
+set softtabstop=2 " Number of spaces in tab when editing.
+set expandtab " Tabs are spaces.
+set wildmode=full " ???
+set cursorline " Highlight current line.
+set lazyredraw " Redraw only when we need to.
+set showmatch " Highlight matching [{()}].
+set foldenable " Enable folding.
+set foldlevelstart=10 " Open most folds by default.
+set foldnestmax=10 " 10 nested fold max.
+set foldmethod=indent " Fold based on indent level.
 
+
+" MAPPINGS
+" ##############################################################################
+map Y y$ " Y should act like D and C - yank until EOL, rather than yy.
+nnoremap <leader><space> :nohlsearch<CR> " Turn off search highlight.
+nnoremap <space> za " Space open/closes folds.
+nnoremap j gj " Move up vertically by visual line, not real line.
+nnoremap k gk " Move down vertically by visual line, not real line.
+nnoremap gV `[v`] " Highlight last inserted text.
+let mapleader=',' " Leader is comma.
+nnoremap <leader>u :GundoToggle<CR> " Toggle gundo.
+nnoremap <leader>ev :vsp $MYVIMRC<CR> " Edit vimrc.
+nnoremap <leader>ez :vsp ~/.zshrc<CR> " Edit zshrc.
+nnoremap <leader>sv :source $MYVIMRC<CR> " Load vimrc bindings.
+nnoremap <leader>s :mksession<CR> " Save session.
+nnoremap <leader>a :Ag " Open ag.vim.
+
+
+" OTHER
+" ##############################################################################
 " In many terminal emulators the mouse works just fine, so enable it.
 if has('mouse')
   set mouse=a
@@ -93,7 +125,7 @@ endif
 
 " Set color scheme settings.
 set background=dark
-colorscheme solarized
+colorscheme spacegray
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
