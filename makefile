@@ -26,6 +26,7 @@ dotfiles: $(ROOT_DIR)
 # setup vim bundles
 .PHONY: vim
 vim: $(VIMRC)
+	mkdir ~/.vim-tmp
 	mkdir -p $(VIM_BUNDLE_DIR)
 	git clone http://github.com/gmarik/vundle.git $(VUNDLE)
 	vim +PluginInstall! +PluginClean +qall

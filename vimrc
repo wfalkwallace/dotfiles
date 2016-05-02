@@ -1,3 +1,7 @@
+" William Falk-Wallace
+" vimrc
+"
+
 " PREP
 " ##############################################################################
 " Use Vim settings, rather than Vi settings.
@@ -31,6 +35,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'scrooloose/nerdtree', { 'on': 'NerdTree' }
 Plug 'sjl/gundo.vim'
 Plug 'rking/ag.vim'
+Plug 'mhinz/vim-startify'
 
 " Utility
 Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
@@ -124,7 +129,6 @@ if has('mouse')
 endif
 
 " Set color scheme settings.
-set background=dark
 colorscheme spacegray
 
 " When editing a file, always jump to the last known cursor position.
@@ -145,3 +149,73 @@ else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+" Language-specific settings.
+augroup configgroup
+    autocmd!
+    autocmd VimEnter * highlight clear SignColumn
+    autocmd BufWritePre *.py,*.js,*.txt,*.md
+                \:call <SID>StripTrailingWhitespaces()
+    autocmd FileType java setlocal noexpandtab
+    autocmd FileType java setlocal list
+    autocmd FileType java setlocal listchars=tab:+\ ,eol:-
+    autocmd FileType java setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType php setlocal expandtab
+    autocmd FileType php setlocal list
+    autocmd FileType php setlocal listchars=tab:+\ ,eol:-
+    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType ruby setlocal tabstop=2
+    autocmd FileType ruby setlocal shiftwidth=2
+    autocmd FileType ruby setlocal softtabstop=2
+    autocmd FileType ruby setlocal commentstring=#\ %s
+    autocmd FileType python setlocal commentstring=#\ %s
+    autocmd BufEnter *.cls setlocal filetype=java
+    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
+    autocmd BufEnter Makefile setlocal noexpandtab
+    autocmd BufEnter *.sh setlocal tabstop=2
+    autocmd BufEnter *.sh setlocal shiftwidth=2
+    autocmd BufEnter *.sh setlocal softtabstop=2
+augroup END
+
+" Move backups out of working directory for cleanliness.
+if !isdirectory($HOME."/.vim-tmp")
+    call mkdir($HOME."/.vim-tmp", "", 0755)
+endif
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/tmp
+set writebackup
+
+" Save undo info.
+if !isdirectory($HOME."/.vim-undo")
+    call mkdir($HOME."/.vim-undo", "", 0755)
+endif
+set undodir=~/.vim-undo
+set undofile
+set undoreload=10000
+
+
+" FUNCTIONS
+" ##############################################################################
+" Toggle between number and relativenumber.
+function! ToggleNumber()
+    if(&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+
+" Strips trailing whitespace at the end of files. this
+" is called on buffer write in the autogroup above.
+" From http://dougblack.io/words/a-good-vimrc.html.
+function! <SID>StripTrailingWhitespaces()
+    " save last search & cursor position
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
+endfunction
