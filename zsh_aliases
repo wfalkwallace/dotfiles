@@ -33,6 +33,7 @@ alias src='source ~/.zshrc'
 alias zshrc='vim ~/.zshrc'
 alias c='clear'
 alias uphour='caffeinate -t 3600'
+alias untar='tar -xzvf'
 ### typos
 alias cd..='cd ..'
 alias subl.='subl .'
