@@ -102,7 +102,7 @@ set foldenable " Enable folding.
 set foldlevelstart=10 " Open most folds by default.
 set foldnestmax=10 " 10 nested fold max.
 set foldmethod=indent " Fold based on indent level.
-
+set t_ut= " disable Background Color Erase
 
 " MAPPINGS
 " ##############################################################################
