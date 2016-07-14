@@ -7,12 +7,14 @@
 #################################  VENV JUNK  ##################################
 if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
   source /usr/local/bin/virtualenvwrapper.sh
-  export WORKON_HOME=$HOME/.virtualenvs
+  export WORKON_HOME="$HOME/.virtualenvs"
 fi
 
 ##################################  NVM JUNK  ##################################
 if which brew &>/dev/null; then
-  export NVM_DIR=~/.nvm
+  export NVM_DIR="HOME/.nvm"
   source $(brew --prefix nvm)/nvm.sh
 fi
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
