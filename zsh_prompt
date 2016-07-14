@@ -54,3 +54,4 @@ RPrompt='date +"%T"'
 prompt_dir() {
   prompt_segment blue black '%1d' # TODO: fix for g3
 }
+
