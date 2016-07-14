@@ -34,6 +34,7 @@ alias zshrc='vim ~/.zshrc'
 alias c='clear'
 alias uphour='caffeinate -t 3600'
 alias untar='tar -xzvf'
+alias takeover="tmux detach -a"
 ### typos
 alias cd..='cd ..'
 alias subl.='subl .'
