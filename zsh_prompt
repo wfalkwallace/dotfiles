@@ -48,7 +48,7 @@ function git_branch()
 ############################## AGNOSTER OVERRIDES ##############################
 ### set the powerline shell right-prompt
 # from http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
-RPrompt='date +"%T"'
+RPROMPT='$(date +"%T")'
 
 ### Override zsh-theme prompt directory helper for brevity
 prompt_dir() {
