@@ -1,52 +1,53 @@
 [user]
-	name = William Falk-Wallace
+  name = William Falk-Wallace
   email = wgf2104@columbia.edu
 [core]
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [alias]
-	a = add
-	br = branch
-	c = commit
-	cl = clone
-	cm = commit -m
-	co = checkout
-	commits = !hub browse -- commits
-	f = fetch
-	issues = !hub browse -- issues
-	last = log -1 HEAD
-	ls = log --pretty=oneline -5
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	l = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-  lp = log --graph --decorate --pretty=oneline --abbrev-commit
-	p = push
-	pb = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f | pbcopy"
-  pu = pull
-  pur = pull --rebase
-	r = reset
-	r1 = reset HEAD^
-	r2 = reset HEAD^^
-	rem = remote
-	rh = reset --hard
-	rh1 = reset HEAD^ --hard
-	rh2 = reset HEAD^^ --hard
-	s = status
-	settings = !hub browse -- settings
-  st = stash # this messes everyone up
-	sl = stash list
-	sp = stash pop
-	unstage = reset HEAD --
-	url = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f"
-	vis = !gitk
-	wiki = !hub browse -- wiki
+  a = add
   ag = "!sh -c 'git ls-files -m -o --exclude-standard | grep $1 | xargs -r git add' -" # 'add grep' stages all new+changed that match $1
+  br = branch
+  c = commit
   cg = "!sh -c 'git ls-files -m | grep $1 | xargs -r git checkout' -" # 'checkout grep' checkouts any files that match $1
   cherry = cherry-pick
+  cl = clone
+  cm = commit -m
+  co = checkout
+  commits = !hub browse -- commits
   dc = diff --cached --ignore-space-change
   df = diff --ignore-space-change
   dg = "!sh -c 'git ls-files -m | grep $1 | xargs -r git diff' -" # 'diff grep' diffs any files that match $1
+  f = fetch
+  git = !git # http://shorts.jeffkreeftmeijer.com/2015/git-is-not-a-git-command/
+  issues = !hub browse -- issues
+  l = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  last = log -1 HEAD
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lp = log --graph --decorate --pretty=oneline --abbrev-commit
+  ls = log --pretty=oneline -5
+  p = push
+  pb = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f | pbcopy"
   pg = "!sh -c 'git ls-files -m | grep $1 | xargs -r git diff --cached' -" # 'patch grep' diff --cached any files that match $1
+  pu = pull
+  pur = pull --rebase
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rem = remote
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
   rmg = "!sh -c 'git ls-files | grep $1 | xargs -r git rm' -" # 'remove grep' remove any files that match $1
   rsg = "!sh -c 'git ls-files -c --with-tree=HEAD | grep $1 | xargs -r git reset HEAD -- ' -" # 'reset grep' reset any files that match $1
+  s = status
+  settings = !hub browse -- settings
+  sl = stash list
+  sp = stash pop
+  st = stash # this messes everyone up
+  unstage = reset HEAD --
+  url = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f"
+  vis = !gitk
+  wiki = !hub browse -- wiki
 [color]
   branch = auto
   current = yellow reverse
@@ -67,7 +68,7 @@
   changed = yellow
   untracked = red
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [merge]
   conflictstyle = diff3
   stat = true
@@ -78,8 +79,8 @@
 [status]
   submodulesummary = true
 [help]
-	autocorrect = 1
+  autocorrect = 1
 [filter "media"]
-	clean = git media clean %f
-	smudge = git media smudge %f
-	required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+  required = true
