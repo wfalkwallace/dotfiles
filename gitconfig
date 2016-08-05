@@ -18,6 +18,7 @@
   df = diff --ignore-space-change
   dg = "!sh -c 'git ls-files -m | grep $1 | xargs -r git diff' -" # 'diff grep' diffs any files that match $1
   f = fetch
+  g = !git # http://shorts.jeffkreeftmeijer.com/2015/git-is-not-a-git-command/
   git = !git # http://shorts.jeffkreeftmeijer.com/2015/git-is-not-a-git-command/
   issues = !hub browse -- issues
   l = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
