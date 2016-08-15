@@ -154,8 +154,9 @@ endif
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
-    autocmd BufWritePre *.py,*.js,*.txt,*.md
-                \:call <SID>StripTrailingWhitespaces()
+    autocmd BufWritePre *.py,*.js,*.txt,*.md,*.css,*.sh :call <SID>StripTrailingWhitespaces()
+    autocmd BufWritePre *.html,*.rb,*.jsx,*.jade,.c,*.zsh :call <SID>StripTrailingWhitespaces()
+    autocmd BufWritePre *.h,*.go,*.less,*.sass,*.scss :call <SID>StripTrailingWhitespaces()
     autocmd FileType java setlocal expandtab
     autocmd FileType java setlocal list
     autocmd FileType java setlocal listchars=tab:+\ ,eol:-
