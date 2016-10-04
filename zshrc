@@ -13,7 +13,7 @@ export ENABLE_CORRECTION="true" # enable command auto-correction
 # export COMPLETION_WAITING_DOTS="true" # display red dots while waiting for completion
 # export HIST_STAMPS="yyyy-mm-dd" # cmd timer in history cmd output
 # export ZSH_CUSTOM=/path/to/new-custom-folder # custom folder other than $ZSH/custom
-ZSH_TMUX_AUTOSTART=true # tmux
+# ZSH_TMUX_AUTOSTART=true # tmux
 
 ###############################  OTHER EXPORTS  ################################
 ### Basics
