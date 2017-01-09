@@ -18,8 +18,8 @@
 # bindkey '^r' history-incremental-search-backward # TODO: Investigate this
 # bindkey '^R' history-incremental-search-backward # TODO: Investigate this
 
-bindkey "^[OC" forward-word # ctrl-left/right for word jumping
-bindkey "^[OD" backward-word # ctrl-left/right for word jumping
+# bindkey "^[OC" forward-word # ctrl-left/right for word jumping
+# bindkey "^[OD" backward-word # ctrl-left/right for word jumping
 bindkey '^a' beginning-of-line # TODO: Investigate this
 bindkey '^e' end-of-line # TODO: Investigate this
 bindkey '^u' backward-kill-line
