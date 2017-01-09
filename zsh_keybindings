@@ -4,21 +4,24 @@
 # zsh_keybindings
 #
 
-bindkey '^[^[[D' backward-word # TODO: Investigate this
-bindkey '^B' backward-word # TODO: Investigate this
-bindkey ';5D' backward-word # ^left # TODO: Investigate this
-bindkey '^[^[[C' forward-word # TODO: Investigate this
-bindkey '^F' forward-word # TODO: Investigate this
-bindkey ';5C' forward-word # ^right # TODO: Investigate this
-bindkey '^[[5D' beginning-of-line # TODO: Investigate this
+# bindkey '^[^[[D' backward-word # TODO: Investigate this
+# bindkey '^B' backward-word # TODO: Investigate this
+# bindkey ';5D' backward-word # ^left # TODO: Investigate this
+# bindkey '^[^[[C' forward-word # TODO: Investigate this
+# bindkey '^F' forward-word # TODO: Investigate this
+# bindkey ';5C' forward-word # ^right # TODO: Investigate this
+# bindkey '^[[5D' beginning-of-line # TODO: Investigate this
+# bindkey '^[[5C' end-of-line # TODO: Investigate this
+# bindkey '^[[3~' delete-char # TODO: Investigate this
+# bindkey '^[^N' newtab # TODO: Investigate this
+# bindkey '^?' backward-delete-char # TODO: Investigate this
+# bindkey '^r' history-incremental-search-backward # TODO: Investigate this
+# bindkey '^R' history-incremental-search-backward # TODO: Investigate this
+
+bindkey "^[OC" forward-word # ctrl-left/right for word jumping
+bindkey "^[OD" backward-word # ctrl-left/right for word jumping
 bindkey '^a' beginning-of-line # TODO: Investigate this
-bindkey '^[[5C' end-of-line # TODO: Investigate this
 bindkey '^e' end-of-line # TODO: Investigate this
-bindkey '^[[3~' delete-char # TODO: Investigate this
-bindkey '^[^N' newtab # TODO: Investigate this
-bindkey '^?' backward-delete-char # TODO: Investigate this
-bindkey '^r' history-incremental-search-backward # TODO: Investigate this
-bindkey '^R' history-incremental-search-backward # TODO: Investigate this
 bindkey '^u' backward-kill-line
 # bindkey -v # vim mode # TODO: Investigate this
 
