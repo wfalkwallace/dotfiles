@@ -62,3 +62,19 @@ function name()
     *) echo "Usage: name <tab|t|window|win|w> <name>" ;;
   esac
 }
+
+################################  ITERM2 HACKS  ################################
+### from https://hackernoon.com/iterm-tip-add-custom-badges-on-a-per-directory-basis-1d54dfc6b6e4
+function iterm2_print_user_vars() {
+  iterm2_set_user_var badge $(dir_badges)
+}
+
+function dir_badges() {
+    while read directory badge || [[ -n "$directory" ]]
+    do
+        if [[ "$PWD" == $directory* ]]; then
+            echo $badge
+            break
+        fi
+    done < ~/.badges
+}

@@ -26,10 +26,13 @@ pkg_files=(vimrc             \
            eslintrc          \
            curlrc            \
            tmux.conf)
+other_files=(linuxrc         \
+             osxrc)
 
 files=($zsh_files \
        $git_files \
-       $pkg_files)
+       $pkg_files \
+       $other_files)
 
 ###############################################################################
 
