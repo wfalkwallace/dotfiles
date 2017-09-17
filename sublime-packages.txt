@@ -1,0 +1,6 @@
+Babel
+Babel Snippets
+Gutter Color
+HTML-CSS-JS Prettify
+SublimeLinter
+SublimeLinter-contrib-eslint

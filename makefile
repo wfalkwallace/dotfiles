@@ -37,6 +37,12 @@ vim: $(VIMRC)
 	git clone http://github.com/gmarik/vundle.git $(VUNDLE)
 	vim +PluginInstall! +PluginClean +qall
 
+.PHONY: zsh
+zsh:
+	chsh -s /bin/zsh
+	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
 # install homebrew
 $(BREW):
 	ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"

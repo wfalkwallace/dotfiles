@@ -7,7 +7,7 @@
 ### standard path
 PATH=$HOME/bin:$PATH
 ### add personal & third party scripts to path
-PATH=$PATH:$HOME/code/scripts:$HOME/code/scripts/3P
+PATH=$PATH:$HOME/code/bin
 ### add homebrew
 PATH=$HOME/homebrew/bin:$PATH #TODO: make this conditional
 

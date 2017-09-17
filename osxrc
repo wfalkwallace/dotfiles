@@ -6,7 +6,15 @@
 
 #################################  OSX HACKS  ##################################
 ### fix iterm2 session namespace quirk
-alias subl="reattach-to-user-namespace subl"
+# alias subl="reattach-to-user-namespace subl"
+function subl()
+{
+  if [ -n "$TMUX" ]; then
+    reattach-to-user-namespace ~/code/bin/subl
+  else
+    ~/code/bin/subl
+  fi
+}
 ### copy-paste in preview
 alias qlpbon='defaults write com.apple.finder QLEnableTextSelection -bool TRUE; killall Finder'
 alias qlpboff='defaults write com.apple.finder QLEnableTextSelection -bool FALSE; killall Finder'
