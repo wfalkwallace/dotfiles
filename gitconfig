@@ -69,7 +69,7 @@
   changed = yellow
   untracked = red
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 [merge]
   conflictstyle = diff3
   stat = true

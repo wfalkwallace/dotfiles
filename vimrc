@@ -43,6 +43,7 @@ Plug 'rstacruz/sparkup'
 Plug 'tpope/vim-endwise', { 'for': 'rb'}
 Plug 'tpope/vim-surround'
 Plug 'gorkunov/smartpairs.vim'
+Plug 'wakatime/vim-wakatime'
 
 " Git
 Plug 'tpope/vim-git'
@@ -66,6 +67,8 @@ Plug 'ajh17/Spacegray.vim'
 
 call plug#end() "Add plugins to &runtimepath
 
+" Set color scheme settings.
+colorscheme spacegray
 
 " SETUP
 " ##############################################################################
@@ -127,9 +130,6 @@ nnoremap <leader>a :Ag " Open ag.vim.
 if has('mouse')
   set mouse=a
 endif
-
-" Set color scheme settings.
-colorscheme spacegray
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler

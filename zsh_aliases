@@ -63,6 +63,8 @@ alias starwars='telnet towel.blinkenlights.nl'
 ################################  APPLICATIONS  ################################
 alias dash='open dash://' # dashdocs
 alias stt='subl .' # st3 shortcut
+alias python='python3'
+alias pip='pip3'
 ### browsers:
 alias chrome='open /Applications/Google\ Chrome.app'
 alias chrm='chrome'

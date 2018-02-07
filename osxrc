@@ -6,15 +6,7 @@
 
 #################################  OSX HACKS  ##################################
 ### fix iterm2 session namespace quirk
-# alias subl="reattach-to-user-namespace subl"
-function subl()
-{
-  if [ -n "$TMUX" ]; then
-    reattach-to-user-namespace ~/code/bin/subl
-  else
-    ~/code/bin/subl
-  fi
-}
+alias subl="reattach-to-user-namespace subl"
 ### copy-paste in preview
 alias qlpbon='defaults write com.apple.finder QLEnableTextSelection -bool TRUE; killall Finder'
 alias qlpboff='defaults write com.apple.finder QLEnableTextSelection -bool FALSE; killall Finder'
@@ -69,20 +61,4 @@ function name()
     "w") name_window $2 ;;
     *) echo "Usage: name <tab|t|window|win|w> <name>" ;;
   esac
-}
-
-################################  ITERM2 HACKS  ################################
-### from https://hackernoon.com/iterm-tip-add-custom-badges-on-a-per-directory-basis-1d54dfc6b6e4
-function iterm2_print_user_vars() {
-  iterm2_set_user_var badge $(dir_badges)
-}
-
-function dir_badges() {
-    while read directory badge || [[ -n "$directory" ]]
-    do
-        if [[ "$PWD" == $directory* ]]; then
-            echo $badge
-            break
-        fi
-    done < ~/.badges
 }

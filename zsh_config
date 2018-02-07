@@ -11,10 +11,10 @@ if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
 fi
 
 ##################################  NVM JUNK  ##################################
-if which brew &>/dev/null; then
-  export NVM_DIR="HOME/.nvm"
-  source $(brew --prefix nvm)/nvm.sh
-fi
+export NVM_DIR="/usr/local/opt/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#################################  GOOG JUNK  ##################################
+source /Users/wfalkwallace/google-cloud-sdk/completion.zsh.inc
+
